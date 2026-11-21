@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kortek Projects - Our portfolio of technology and business solutions">
+    <title>Projects - Kortek Solutions</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='40' fill='%232563eb'/><text x='50' y='58' font-family='Arial, sans-serif' font-size='48' font-weight='bold' fill='white' text-anchor='middle'>K</text></svg>">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container header__container">
+            <a href="index.html" class="logo">Kortek</a>
+            <nav class="nav" id="nav">
+                <ul class="nav__list">
+                    <li><a href="index.html" class="nav__link">Home</a></li>
+                    <li><a href="about.html" class="nav__link">About</a></li>
+                    <li><a href="services.html" class="nav__link">Services</a></li>
+                    <li><a href="projects.html" class="nav__link active">Projects</a></li>
+                    <li><a href="contact.html" class="nav__link">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="nav__toggle" id="navToggle" aria-label="Toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+            <a href="contact.html" class="btn btn--primary header__cta">Get Started</a>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">Our Projects</h1>
+            <p class="page-subtitle">Real solutions delivered for real clients</p>
+        </div>
+    </section>
+
+    <section class="projects">
+        <div class="container">
+            <div class="projects-filter">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="web">Website Development</button>
+                <button class="filter-btn" data-filter="software">Software Development</button>
+                <button class="filter-btn" data-filter="automation">Automation</button>
+                <button class="filter-btn" data-filter="marketing">Digital Marketing</button>
+            </div>
+
+            <div class="projects-grid" id="projectsGrid">
+                <div class="project-card" data-category="web">
+                    <div class="project-card__image">
+                        <span class="project-placeholder">E-Commerce Platform</span>
+                    </div>
+                    <div class="project-card__content">
+                        <span class="project-card__category">Website Development</span>
+                        <h3 class="project-card__title">Retail E-Commerce Platform</h3>
+                        <p class="project-card__desc">Complete online store with payment integration, inventory management, and customer dashboard for a Kenyan retailer.</p>
+                        <div class="project-card__tags">
+                            <span class="tag">WordPress</span>
+                            <span class="tag">WooCommerce</span>
+                            <span class="tag">Payment Gateway</span>
+                        </div>
+                        <div class="project-card__meta">
+                            <span class="project-year">2024</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="software">
+                    <div class="project-card__image">
+                        <span class="project-placeholder">Task Management App</span>
+                    </div>
+                    <div class="project-card__content">
+                        <span class="project-card__category">Software Development</span>
+                        <h3 class="project-card__title">Team Collaboration Software</h3>
+                        <p class="project-card__desc">Custom web application for project management, task tracking, and team collaboration with real-time updates.</p>
+                        <div class="project-card__tags">
+                            <span class="tag">React</span>
+                            <span class="tag">Node.js</span>
+                            <span class="tag">PostgreSQL</span>
+                        </div>
+                        <div class="project-card__meta">
+                            <span class="project-year">2024</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="automation">
+                    <div class="project-card__image">
+                        <span class="project-placeholder">HR Automation</span>
+                    </div>
+                    <div class="project-card__content">
+                        <span class="project-card__category">Business Automation</span>
+                        <h3 class="project-card__title">HR Process Automation</h3>
+                        <p class="project-card__desc">Automated employee onboarding, leave management, and performance review workflows for a mid-size company.</p>
+                        <div class="project-card__tags">
+                            <span class="tag">Zapier</span>
+                            <span class="tag">Google Workspace</span>
+                            <span class="tag">Slack</span>
+                        </div>
+                        <div class="project-card__meta">
+                            <span class="project-year">2023</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="marketing">
+                    <div class="project-card__image">
+                        <span class="project-placeholder">Digital Campaign</span>
+                    </div>
+                    <div class="project-card__content">
+                        <span class="project-card__category">Digital Marketing</span>
+                        <h3 class="project-card__title">Product Launch Campaign</h3>
+                        <p class="project-card__desc">Multi-channel digital marketing campaign for a tech startup's product launch, achieving 300% ROI.</p>
+                        <div class="project-card__tags">
+                            <span class="tag">Google Ads</span>
+                            <span class="tag">Social Media</span>
+                            <span class="tag">Email Marketing</span>
+                        </div>
+                        <div class="project-card__meta">
+                            <span class="project-year">2024</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="web">
+                    <div class="project-card__image">
+                        <span class="project-placeholder">Corporate Website</span>
+                    </div>
+                    <div class="project-card__content">
+                        <span class="project-card__category">Website Development</span>
+                        <h3 class="project-card__title">Professional Services Website</h3>
+                        <p class="project-card__desc">Modern corporate website for a consulting firm with lead generation forms, blog, and client portal.</p>
+                        <div class="project-card__tags">
+                            <span class="tag">Next.js</span>
+                            <span class="tag">Tailwind CSS</span>
+                            <span class="tag">Headless CMS</span>
+                        </div>
+                        <div class="project-card__meta">
+                            <span class="project-year">2023</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="software">
+                    <div class="project-card__image">
+                        <span class="project-placeholder">Inventory System</span>
+                    </div>
+                    <div class="project-card__content">
+                        <span class="project-card__category">Software Development</span>
+                        <h3 class="project-card__title">Inventory Management System</h3>
+                        <p class="project-card__desc">Custom desktop and mobile application for warehouse inventory tracking with barcode scanning and real-time sync.</p>
+                        <div class="project-card__tags">
+                            <span class="tag">Flutter</span>
+                            <span class="tag">Firebase</span>
+                            <span class="tag">Python</span>
+                        </div>
+                        <div class="project-card__meta">
+                            <span class="project-year">2023</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="analytics">
+                    <div class="project-card__image">
+                        <span class="project-placeholder">Analytics Dashboard</span>
+                    </div>
+                    <div class="project-card__content">
+                        <span class="project-card__category">Data Analytics</span>
+                        <h3 class="project-card__title">Business Intelligence Dashboard</h3>
+                        <p class="project-card__desc">Comprehensive analytics dashboard with KPI tracking, customer insights, and predictive modeling for sales optimization.</p>
+                        <div class="project-card__tags">
+                            <span class="tag">Power BI</span>
+                            <span class="tag">SQL</span>
+                            <span class="tag">Python</span>
+                        </div>
+                        <div class="project-card__meta">
+                            <span class="project-year">2024</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="business">
+                    <div class="project-card__image">
+                        <span class="project-placeholder">Digital Transformation</span>
+                    </div>
+                    <div class="project-card__content">
+                        <span class="project-card__category">Business Solutions</span>
+                        <h3 class="project-card__title">SME Digital Transformation</h3>
+                        <p class="project-card__desc">End-to-end digital transformation strategy and implementation for a growing manufacturing company.</p>
+                        <div class="project-card__tags">
+                            <span class="tag">Consulting</span>
+                            <span class="tag">Process Mapping</span>
+                            <span class="tag">Change Mgmt</span>
+                        </div>
+                        <div class="project-card__meta">
+                            <span class="project-year">2023</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="projects-empty" id="projectsEmpty" style="display: none;">
+                <p>No projects found in this category.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container cta__container">
+            <h2 class="cta__title">Have a Project in Mind?</h2>
+            <p class="cta__subtitle">Let's discuss how we can help bring your vision to life</p>
+            <a href="contact.html" class="btn btn--primary btn--large">Start a Project</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer__container">
+            <div class="footer__brand">
+                <a href="index.html" class="logo">Kortek</a>
+                <p class="footer__tagline">Technology and Business Solutions for the Modern Enterprise</p>
+            </div>
+            <div class="footer__columns">
+                <div class="footer__column">
+                    <h4 class="footer__column-title">Company</h4>
+                    <ul class="footer__list">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                    </ul>
+                </div>
+                <div class="footer__column">
+                    <h4 class="footer__column-title">Services</h4>
+                    <ul class="footer__list">
+                        <li><a href="services.html">All Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer__column">
+                    <h4 class="footer__column-title">Quick Links</h4>
+                    <ul class="footer__list">
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer__contact">
+                    <h4 class="footer__contact-title">Contact</h4>
+                    <p class="footer__contact-info">
+                        📧 info@kortek.co.ke<br>
+                        📞 +254 700 000 000<br>
+                        🌐 Nairobi, Kenya
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <p>&copy; 2026 Kortek Solutions. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

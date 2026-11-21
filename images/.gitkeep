@@ -1,0 +1,10 @@
+# Images Directory
+Place the following images here:
+
+1. logo.png - Company logo (recommended: 200x200px or 400x400px)
+2. favicon.ico - Site favicon (16x16 and 32x32)
+3. hero-image.jpg - Hero section background image
+4. team/* - Team member photos
+5. projects/* - Project screenshots
+
+Placeholder images will be generated or replaced with actual content.

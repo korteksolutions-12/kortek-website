@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Kortek - Get in touch for technology and business solutions">
+    <title>Contact Kortek - Get in Touch</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='40' fill='%232563eb'/><text x='50' y='58' font-family='Arial, sans-serif' font-size='48' font-weight='bold' fill='white' text-anchor='middle'>K</text></svg>">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container header__container">
+            <a href="index.html" class="logo">Kortek</a>
+            <nav class="nav" id="nav">
+                <ul class="nav__list">
+                    <li><a href="index.html" class="nav__link">Home</a></li>
+                    <li><a href="about.html" class="nav__link">About</a></li>
+                    <li><a href="services.html" class="nav__link">Services</a></li>
+                    <li><a href="projects.html" class="nav__link">Projects</a></li>
+                    <li><a href="contact.html" class="nav__link active">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="nav__toggle" id="navToggle" aria-label="Toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+            <a href="contact.html" class="btn btn--primary header__cta">Get Started</a>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">Contact Us</h1>
+            <p class="page-subtitle">Let's talk about how we can help your business grow</p>
+        </div>
+    </section>
+
+    <section class="contact">
+        <div class="container">
+            <div class="contact__grid">
+                <div class="contact__info">
+                    <h2 class="contact__title">Get in Touch</h2>
+                    <p class="contact__intro">We're ready to discuss your project and create a solution that fits your needs. Reach out using any of the methods below.</p>
+
+                    <div class="contact-block">
+                        <h3 class="contact-block__title">Office Location</h3>
+                        <p class="contact-block__content">
+                            <strong>123 Tech Park, 4th Floor</strong><br>
+                            Westlands, Nairobi<br>
+                            Kenya
+                        </p>
+                    </div>
+
+                    <div class="contact-block">
+                        <h3 class="contact-block__title">Phone</h3>
+                        <p class="contact-block__content">
+                            <strong>Office:</strong> +254 20 123 4567<br>
+                            <strong>WhatsApp:</strong> +254 700 000 000
+                        </p>
+                    </div>
+
+                    <div class="contact-block">
+                        <h3 class="contact-block__title">Email</h3>
+                        <p class="contact-block__content">
+                            <strong>General Inquiry:</strong> <a href="mailto:info@kortek.co.ke">info@kortek.co.ke</a><br>
+                            <strong>Support:</strong> <a href="mailto:support@kortek.co.ke">support@kortek.co.ke</a><br>
+                            <strong>Careers:</strong> <a href="mailto:careers@kortek.co.ke">careers@kortek.co.ke</a>
+                        </p>
+                    </div>
+
+                    <div class="contact-block">
+                        <h3 class="contact-block__title">Business Hours</h3>
+                        <p class="contact-block__content">
+                            Monday - Friday: 8:00 AM - 6:00 PM EAT<br>
+                            Saturday: 9:00 AM - 1:00 PM EAT<br>
+                            Sunday: Closed
+                        </p>
+                    </div>
+                </div>
+
+                <div class="contact__form-container">
+                    <form class="contact-form" id="contactForm" action="#" method="POST">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Full Name *</label>
+                            <input type="text" id="name" name="name" class="form-input" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email Address *</label>
+                            <input type="email" id="email" name="email" class="form-input" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone" class="form-label">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" class="form-input">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="service" class="form-label">Interested Service</label>
+                            <select id="service" name="service" class="form-select">
+                                <option value="">Select a service</option>
+                                <option value="webdev">Website Development</option>
+                                <option value="software">Software Development</option>
+                                <option value="automation">Business Automation</option>
+                                <option value="marketing">Digital Marketing</option>
+                                <option value="analytics">Data Analytics</option>
+                                <option value="business">Professional Business Solutions</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message" class="form-label">Message *</label>
+                            <textarea id="message" name="message" class="form-textarea" rows="6" required placeholder="Tell us about your project..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn--primary btn--large">Send Message</button>
+                    </form>
+
+                    <div class="form-note">
+                        <p><strong>Ready to get started?</strong> Send your requirements and we'll respond within 24 hours.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="map-section">
+        <div class="container">
+            <h2 class="section-title">Find Us</h2>
+            <div class="map-placeholder">
+                <p>🗺️ Interactive map coming soon - 123 Tech Park, Westlands, Nairobi, Kenya</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container cta__container">
+            <h2 class="cta__title">Ready to Transform Your Business?</h2>
+            <p class="cta__subtitle">Contact us today for a free consultation</p>
+            <a href="contact.html" class="btn btn--primary btn--large">Send a Message</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer__container">
+            <div class="footer__brand">
+                <a href="index.html" class="logo">Kortek</a>
+                <p class="footer__tagline">Technology and Business Solutions for the Modern Enterprise</p>
+            </div>
+            <div class="footer__columns">
+                <div class="footer__column">
+                    <h4 class="footer__column-title">Company</h4>
+                    <ul class="footer__list">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                    </ul>
+                </div>
+                <div class="footer__column">
+                    <h4 class="footer__column-title">Services</h4>
+                    <ul class="footer__list">
+                        <li><a href="services.html">All Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer__column">
+                    <h4 class="footer__column-title">Quick Links</h4>
+                    <ul class="footer__list">
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer__contact">
+                    <h4 class="footer__contact-title">Contact</h4>
+                    <p class="footer__contact-info">
+                        📧 info@kortek.co.ke<br>
+                        📞 +254 700 000 000<br>
+                        🌐 Nairobi, Kenya
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <p>&copy; 2026 Kortek Solutions. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

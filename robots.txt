@@ -1,0 +1,7 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://kortek.co.ke/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 10
