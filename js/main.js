@@ -38,6 +38,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Add scroll animation to elements
     initScrollReveal();
     
+    // Services Page Animations
+    initServicesAnimations();
+    
     // SEO Schema Markup
     addSchemaMarkup();
     
@@ -184,6 +187,141 @@ function initPremiumAnimations() {
             end: 'bottom top',
             scrub: true
         }
+    });
+}
+
+// Services Page Specific Animations
+function initServicesAnimations() {
+    // Service Category Titles Reveal
+    gsap.utils.toArray('.service-category__title').forEach(title => {
+        gsap.from(title, {
+            opacity: 0,
+            y: 30,
+            duration: 0.8,
+            ease: 'power3.out',
+            scrollTrigger: {
+                trigger: title,
+                start: 'top 85%',
+                end: 'top 75%',
+                toggleActions: 'play none none none'
+            }
+        });
+    });
+
+    // Service Category Description Reveal
+    gsap.utils.toArray('.service-category__description').forEach(desc => {
+        gsap.from(desc, {
+            opacity: 0,
+            y: 20,
+            duration: 0.6,
+            ease: 'power2.out',
+            scrollTrigger: {
+                trigger: desc,
+                start: 'top 85%',
+                end: 'top 75%',
+                toggleActions: 'play none none none'
+            },
+            delay: 0.1
+        });
+    });
+
+    // Service Features with Staggered Reveal
+    gsap.utils.toArray('.service-category__features li').forEach((item, index) => {
+        gsap.from(item, {
+            opacity: 0,
+            x: -20,
+            duration: 0.5,
+            ease: 'power2.out',
+            scrollTrigger: {
+                trigger: item,
+                start: 'top 85%',
+                end: 'top 75%',
+                toggleActions: 'play none none none'
+            },
+            delay: (index % 4) * 0.05
+        });
+    });
+
+    // Package Cards
+    gsap.utils.toArray('.package-card').forEach((card, index) => {
+        gsap.from(card, {
+            opacity: 0,
+            y: 50,
+            duration: 0.7,
+            ease: 'power3.out',
+            scrollTrigger: {
+                trigger: card,
+                start: 'top 85%',
+                end: 'top 70%',
+                scrub: 0.3
+            },
+            delay: index * 0.15
+        });
+    });
+
+    // Package Price Highlight
+    gsap.utils.toArray('.package-price').forEach(price => {
+        gsap.from(price, {
+            opacity: 0,
+            duration: 0.5,
+            ease: 'power2.out',
+            scrollTrigger: {
+                trigger: price,
+                start: 'top 85%',
+                end: 'top 70%',
+                toggleActions: 'play none none none'
+            }
+        });
+    });
+
+    // Package Feature Items
+    gsap.utils.toArray('.package-features li').forEach((item, index) => {
+        gsap.from(item, {
+            opacity: 0,
+            x: -20,
+            duration: 0.4,
+            ease: 'power2.out',
+            scrollTrigger: {
+                trigger: item,
+                start: 'top 85%',
+                end: 'top 75%',
+                toggleActions: 'play none none none'
+            },
+            delay: (index % 5) * 0.03
+        });
+    });
+
+    // CTA Features
+    gsap.utils.toArray('.cta-feature').forEach((feature, index) => {
+        gsap.from(feature, {
+            opacity: 0,
+            y: 20,
+            duration: 0.5,
+            ease: 'power2.out',
+            scrollTrigger: {
+                trigger: feature,
+                start: 'top 85%',
+                end: 'top 75%',
+                toggleActions: 'play none none none'
+            },
+            delay: index * 0.1
+        });
+    });
+
+    // Service Visual Elements Animation
+    gsap.utils.toArray('.service-visual').forEach(visual => {
+        gsap.from(visual, {
+            opacity: 0,
+            scale: 0.8,
+            duration: 0.6,
+            ease: 'power3.out',
+            scrollTrigger: {
+                trigger: visual.parentElement,
+                start: 'top 80%',
+                end: 'top 70%',
+                toggleActions: 'play none none none'
+            }
+        });
     });
 }
 

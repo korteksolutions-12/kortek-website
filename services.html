@@ -3,18 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Kortek Services - Website Development, Software Development, Business Automation, Digital Marketing, Data Analytics, Professional Business Solutions">
-    <title>Services - Kortek Solutions</title>
+    <meta name="description" content="Kortek Services - Premium Website Development, Software Development, Business Automation, Digital Marketing, Data Analytics, Professional Business Solutions in Kenya">
+    <meta property="og:title" content="Kortek Services - Premium Tech Solutions">
+    <meta property="og:description" content="Comprehensive technology solutions with competitive Kenyan market pricing. From websites to AI automation.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kortek.co.ke/services">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>Services - Kortek Solutions | Premium Tech Services</title>
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='40' fill='%232563eb'/><text x='50' y='58' font-family='Arial, sans-serif' font-size='48' font-weight='bold' fill='white' text-anchor='middle'>K</text></svg>">
     <link rel="stylesheet" href="css/style.css">
+    <!-- GSAP for premium animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Loading Spinner -->
+    <div class="loader" id="loader"></div>
+
+    <!-- Header & Navigation -->
     <header class="header">
         <div class="container header__container">
-            <a href="index.html" class="logo">Kortek</a>
+            <a href="index.html" class="logo">KORTek</a>
             <nav class="nav" id="nav">
                 <ul class="nav__list">
                     <li><a href="index.html" class="nav__link">Home</a></li>
@@ -27,189 +39,279 @@
             <button class="nav__toggle" id="navToggle" aria-label="Toggle navigation">
                 <span class="hamburger"></span>
             </button>
-            <a href="contact.html" class="btn btn--primary header__cta">Get Started</a>
+            <a href="contact.html" class="btn btn--primary btn--large header__cta">Request Quote</a>
         </div>
     </header>
 
-    <section class="page-header">
-        <div class="container">
-            <h1 class="page-title">Our Services</h1>
-            <p class="page-subtitle">Comprehensive technology solutions tailored to your business needs</p>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero__container">
+            <div class="hero__content">
+                <div class="hero__badge">
+                    <span class="badge__text">KORTEK SERVICES</span>
+                </div>
+                <h1 class="hero__title">Premium Technology Solutions</h1>
+                <p class="hero__subtitle">Comprehensive services tailored for Kenyan businesses</p>
+                <p class="hero__text">From websites to AI automation, we deliver enterprise-grade technology solutions with market-competitive pricing in KES.</p>
+            </div>
+            <div class="hero__visual">
+                <div class="k-emblem">
+                    <div class="emblem__glow"></div>
+                    <div class="emblem__k">K</div>
+                    <div class="emblem__orbit orbit1"></div>
+                    <div class="emblem__orbit orbit2"></div>
+                    <div class="emblem__orbit orbit3"></div>
+                </div>
+            </div>
         </div>
     </section>
 
+    <!-- Services Sections -->
     <section class="services">
         <div class="container">
             <!-- Website Development -->
             <div class="service-category" id="webdev">
-                <h2 class="service-category__title">Website Development</h2>
-                <p class="service-category__subtitle">Create a powerful online presence that drives results</p>
-                <div class="service-category__content">
+                <div class="service-category__grid">
                     <div class="service-category__text">
-                        <p>We build responsive, high-performance websites that establish your brand's online identity and engage your audience. From corporate websites to e-commerce platforms, our solutions are optimized for speed, SEO, and conversion.</p>
+                        <h2 class="service-category__title">Website Development</h2>
+                        <p class="service-category__desc">High-performance websites that convert visitors into customers</p>
+                        <p class="service-category__description">We craft responsive, SEO-optimized websites that establish your brand's online presence and drive business growth. Every site includes performance optimization and security best practices.</p>
                         <ul class="service-category__features">
-                            <li>Custom WordPress and CMS development</li>
-                            <li>E-commerce website solutions</li>
-                            <li>Mobile-responsive design</li>
-                            <li>SEO-optimized architecture</li>
-                            <li>Performance optimization</li>
-                            <li>Security implementation</li>
+                            <li>Landing pages • From KES 12,000</li>
+                            <li>Business websites • From KES 15,000</li>
+                            <li>Premium interactive sites • From KES 40,000</li>
+                            <li>E-commerce websites • From KES 50,000</li>
+                            <li>Website redesigns</li>
+                            <li>Website maintenance packages</li>
                         </ul>
+                        <a href="contact.html" class="btn btn--primary">Request Quote</a>
                     </div>
-                    <div class="service-category__image-placeholder">
-                        <span>Website Development Portfolio</span>
+                    <div class="service-category__visual">
+                        <div class="service-visual">
+                            <div class="browser-window">
+                                <div class="browser__bar">
+                                    <span class="browser__dot red"></span>
+                                    <span class="browser__dot yellow"></span>
+                                    <span class="browser__dot green"></span>
+                                </div>
+                                <div class="browser__screen" id="webdev-screen">
+                                    <div class="mock-site">
+                                        <div class="mock-header"></div>
+                                        <div class="mock-hero"></div>
+                                        <div class="mock-content"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <!-- Software Development -->
             <div class="service-category" id="software">
-                <h2 class="service-category__title">Software Development</h2>
-                <p class="service-category__subtitle">Custom software solutions built for your specific needs</p>
-                <div class="service-category__content">
+                <div class="service-category__grid service-category__grid--reversed">
                     <div class="service-category__text">
-                        <p>Transform your business processes with custom software development. We design and build scalable applications using modern technologies, ensuring your solutions grow with your business.</p>
+                        <h2 class="service-category__title">Software Development</h2>
+                        <p class="service-category__desc">Custom software built for your unique business needs</p>
+                        <p class="service-category__description">Transform your operations with custom software solutions. We build scalable applications using modern technologies that grow with your business.</p>
                         <ul class="service-category__features">
-                            <li>Web application development</li>
-                            <li>Mobile app development (iOS & Android)</li>
-                            <li>Desktop applications</li>
-                            <li>API development and integration</li>
-                            <li>Cloud-native solutions</li>
-                            <li>Legacy system modernization</li>
+                            <li>Custom business software • From KES 25,000</li>
+                            <li>POS systems • From KES 45,000</li>
+                            <li>CRM & booking platforms</li>
+                            <li>Inventory management systems</li>
+                            <li>Mobile app development</li>
+                            <li>API integrations</li>
                         </ul>
+                        <a href="contact.html" class="btn btn--primary">Request Quote</a>
                     </div>
-                    <div class="service-category__image-placeholder">
-                        <span>Software Development</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Business Automation -->
-            <div class="service-category" id="automation">
-                <h2 class="service-category__title">Business Automation</h2>
-                <p class="service-category__subtitle">Streamline operations and boost productivity</p>
-                <div class="service-category__content">
-                    <div class="service-category__text">
-                        <p>Automate repetitive tasks and workflow bottlenecks with our business automation solutions. We implement smart systems that reduce manual work while improving accuracy and speed.</p>
-                        <ul class="service-category__features">
-                            <li>Process automation workflows</li>
-                            <li>CRM system integration</li>
-                            <li>ERP business process optimization</li>
-                            <li>Email marketing automation</li>
-                            <li>Data entry and reporting automation</li>
-                            <li>Task management systems</li>
-                        </ul>
-                    </div>
-                    <div class="service-category__image-placeholder">
-                        <span>Business Automation</span>
+                    <div class="service-category__visual">
+                        <div class="service-visual">
+                            <div class="laptop">
+                                <div class="laptop__screen" id="software-screen"></div>
+                                <div class="laptop__base"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <!-- Digital Marketing -->
             <div class="service-category" id="marketing">
-                <h2 class="service-category__title">Digital Marketing</h2>
-                <p class="service-category__subtitle">Reach, engage, and convert your target audience</p>
-                <div class="service-category__content">
+                <div class="service-category__grid">
                     <div class="service-category__text">
-                        <p>Our digital marketing services combine strategy, creativity, and data analytics to grow your brand visibility and customer base. We create campaigns that deliver measurable results.</p>
+                        <h2 class="service-category__title">Digital Marketing</h2>
+                        <p class="service-category__desc">Data-driven marketing that delivers real ROI</p>
+                        <p class="service-category__description">Our comprehensive digital marketing services combine strategy, creativity, and analytics to grow your brand visibility and customer base across all channels.</p>
                         <ul class="service-category__features">
-                            <li>Social media marketing & management</li>
-                            <li>Google Ads and PPC campaigns</li>
-                            <li>Search engine optimization (SEO)</li>
-                            <li>Content marketing strategy</li>
-                            <li>Email marketing campaigns</li>
-                            <li>Analytics and performance reporting</li>
+                            <li>Social media management • From KES 12,000/month</li>
+                            <li>Content creation & design</li>
+                            <li>Google Ads management</li>
+                            <li>SEO optimization</li>
+                            <li>Campaign strategy</li>
+                            <li>Analytics & reporting</li>
                         </ul>
+                        <a href="contact.html" class="btn btn--primary">Request Quote</a>
                     </div>
-                    <div class="service-category__image-placeholder">
-                        <span>Digital Marketing</span>
+                    <div class="service-category__visual">
+                        <div class="service-visual">
+                            <div class="dashboard">
+                                <div class="chart-bar"></div>
+                                <div class="chart-bar"></div>
+                                <div class="chart-bar"></div>
+                                <div class="chart-line"></div>
+                                <div class="metric-display"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Business Automation -->
+            <div class="service-category" id="automation">
+                <div class="service-category__grid service-category__grid--reversed">
+                    <div class="service-category__text">
+                        <h2 class="service-category__title">Business Automation</h2>
+                        <p class="service-category__desc">Intelligent systems that work 24/7 for you</p>
+                        <p class="service-category__description">Automate repetitive tasks and workflow bottlenecks with our smart business automation solutions. Reduce manual work while improving accuracy and speed.</p>
+                        <ul class="service-category__features">
+                            <li>Workflow automation • From KES 10,000</li>
+                            <li>AI chatbots • From KES 20,000</li>
+                            <li>CRM integrations</li>
+                            <li>Email automation</li>
+                            <li>Task management systems</li>
+                            <li>Business process automation</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn--primary">Request Quote</a>
+                    </div>
+                    <div class="service-category__visual">
+                        <div class="service-visual">
+                            <div class="automation-flow">
+                                <div class="flow-node node1"></div>
+                                <div class="flow-arrow"></div>
+                                <div class="flow-node node2"></div>
+                                <div class="flow-arrow"></div>
+                                <div class="flow-node node3"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <!-- Data Analytics -->
             <div class="service-category" id="analytics">
-                <h2 class="service-category__title">Data Analytics</h2>
-                <p class="service-category__subtitle">Make data-driven decisions for business growth</p>
-                <div class="service-category__content">
+                <div class="service-category__grid">
                     <div class="service-category__text">
-                        <p>Leverage the power of your data with our advanced analytics solutions. We transform raw data into actionable insights that drive strategic business decisions and operational improvements.</p>
+                        <h2 class="service-category__title">Data Analytics</h2>
+                        <p class="service-category__desc">Turn your data into actionable business insights</p>
+                        <p class="service-category__description">Leverage the power of data with custom dashboards and analytics solutions. We transform raw data into actionable insights that drive strategic business decisions.</p>
                         <ul class="service-category__features">
-                            <li>Business intelligence dashboards</li>
-                            <li>Data visualization & reporting</li>
-                            <li>Predictive analytics models</li>
-                            <li>Data warehouse setup</li>
-                            <li>Customer behavior analysis</li>
-                            <li>KPI tracking and optimization</li>
+                            <li>Data dashboards • From KES 15,000</li>
+                            <li>Business intelligence reports</li>
+                            <li>Excel automation & solutions</li>
+                            <li>Power BI dashboards</li>
+                            <li>Performance tracking</li>
+                            <li>Predictive analytics</li>
                         </ul>
+                        <a href="contact.html" class="btn btn--primary">Request Quote</a>
                     </div>
-                    <div class="service-category__image-placeholder">
-                        <span>Data Analytics Dashboard</span>
+                    <div class="service-category__visual">
+                        <div class="service-visual">
+                            <div class="analytics-dashboard">
+                                <div class="metric-card">
+                                    <div class="metric-value">245K</div>
+                                    <div class="metric-label">Users</div>
+                                </div>
+                                <div class="chart-container">
+                                    <div class="bar-chart"></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Professional Business Solutions -->
-            <div class="service-category" id="business">
-                <h2 class="service-category__title">Professional Business Solutions</h2>
-                <p class="service-category__subtitle">Comprehensive consulting and operational excellence</p>
-                <div class="service-category__content">
+            <!-- Business Solutions -->
+            <div class="service-category" id="solutions">
+                <div class="service-category__grid service-category__grid--reversed">
                     <div class="service-category__text">
-                        <p>We provide end-to-end business consulting services that align technology with your strategic objectives. From process optimization to digital transformation, we help you operate more efficiently and compete effectively.</p>
+                        <h2 class="service-category__title">Business Solutions</h2>
+                        <p class="service-category__desc">End-to-end digital transformation for your business</p>
+                        <p class="service-category__description">Comprehensive technology consulting and professional services that align innovation with your strategic objectives. From branding to technical support, we've got you covered.</p>
                         <ul class="service-category__features">
-                            <li>Business process optimization</li>
-                            <li>Digital transformation strategy</li>
-                            <li>Technology consulting</li>
-                            <li>Business process mapping</li>
-                            <li>Change management</li>
-                            <li>Operations automation</li>
+                            <li>Branding packages • From KES 12,000</li>
+                            <li>Logo design • From KES 5,000</li>
+                            <li>Company profiles • From KES 5,000</li>
+                            <li>Business plans • From KES 8,000</li>
+                            <li>Domain & email setup</li>
+                            <li>Technical support</li>
                         </ul>
+                        <a href="contact.html" class="btn btn--primary">Request Quote</a>
                     </div>
-                    <div class="service-category__image-placeholder">
-                        <span>Business Solutions</span>
+                    <div class="service-category__visual">
+                        <div class="service-visual">
+                            <div class="solution-grid">
+                                <div class="solution-item s1"></div>
+                                <div class="solution-item s2"></div>
+                                <div class="solution-item s3"></div>
+                                <div class="solution-item s4"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Pricing Packages -->
     <section class="services-packages">
         <div class="container">
             <h2 class="section-title">Service Packages</h2>
-            <p class="section-subtitle">Flexible plans to meet your business needs</p>
+            <p class="section-subtitle">Flexible plans to meet your business needs and budget</p>
             <div class="packages-grid">
                 <div class="package-card">
-                    <h3 class="package-title">Essential</h3>
-                    <p class="package-desc">Perfect for small businesses starting their digital journey</p>
+                    <div class="package-header">
+                        <h3 class="package-title">Essential</h3>
+                        <p class="package-subtitle">Perfect for startups and small businesses</p>
+                    </div>
+                    <div class="package-price">From KES 12,000</div>
                     <ul class="package-features">
-                        <li>Basic website development</li>
+                        <li>Basic website (up to 5 pages)</li>
+                        <li>Responsive design</li>
                         <li>SEO setup</li>
                         <li>5 hours consulting</li>
+                        <li>Email support</li>
                     </ul>
                     <a href="contact.html" class="btn btn--secondary">Get Started</a>
                 </div>
                 <div class="package-card package-card--featured">
-                    <h3 class="package-title">Professional</h3>
-                    <p class="package-desc">Full-featured solutions for growing businesses</p>
+                    <div class="package-header">
+                        <h3 class="package-title">Professional</h3>
+                        <p class="package-subtitle">Ideal for growing businesses</p>
+                    </div>
+                    <div class="package-price">From KES 50,000</div>
                     <ul class="package-features">
                         <li>Custom website + CMS</li>
-                        <li>Marketing automation</li>
+                        <li>Marketing automation setup</li>
                         <li>Analytics dashboard</li>
                         <li>20 hours consulting</li>
-                        <li>Priority support</li>
+                        <li>3 months support</li>
+                        <li>Priority response</li>
                     </ul>
                     <a href="contact.html" class="btn btn--primary">Choose This</a>
                 </div>
                 <div class="package-card">
-                    <h3 class="package-title">Enterprise</h3>
-                    <p class="package-desc">Comprehensive solutions for large organizations</p>
+                    <div class="package-header">
+                        <h3 class="package-title">Enterprise</h3>
+                        <p class="package-subtitle">Comprehensive solutions for larger organizations</p>
+                    </div>
+                    <div class="package-price">From KES 150,000</div>
                     <ul class="package-features">
                         <li>Full software development</li>
                         <li>Business automation suite</li>
                         <li>Data analytics platform</li>
                         <li>Unlimited consulting</li>
                         <li>Dedicated team</li>
+                        <li>White-glove support</li>
                     </ul>
                     <a href="contact.html" class="btn btn--secondary">Contact Us</a>
                 </div>
@@ -217,18 +319,34 @@
         </div>
     </section>
 
+    <!-- Inquiry Form Preview / CTA -->
     <section class="cta-section">
         <div class="container cta__container">
-            <h2 class="cta__title">Ready to Get Started?</h2>
-            <p class="cta__subtitle">Contact us today for a free consultation</p>
-            <a href="contact.html" class="btn btn--primary btn--large">Contact Us</a>
+            <h2 class="cta__title">Ready to Transform Your Business?</h2>
+            <p class="cta__subtitle">Contact us today for a free consultation and custom quotation</p>
+            <div class="cta__features">
+                <div class="cta-feature">
+                    <span class="cta-feature__icon">💰</span>
+                    <span class="cta-feature__text">Competitive KES pricing</span>
+                </div>
+                <div class="cta-feature">
+                    <span class="cta-feature__icon">⚡</span>
+                    <span class="cta-feature__text">Fast turnaround</span>
+                </div>
+                <div class="cta-feature">
+                    <span class="cta-feature__icon">🔒</span>
+                    <span class="cta-feature__text">Secure delivery</span>
+                </div>
+            </div>
+            <a href="contact.html" class="btn btn--primary btn--large">Request Custom Quotation</a>
         </div>
     </section>
 
+    <!-- Footer -->
     <footer class="footer">
         <div class="container footer__container">
             <div class="footer__brand">
-                <a href="index.html" class="logo">Kortek</a>
+                <a href="index.html" class="footer__logo">KORTek</a>
                 <p class="footer__tagline">Technology and Business Solutions for the Modern Enterprise</p>
             </div>
             <div class="footer__columns">
@@ -245,13 +363,16 @@
                     <ul class="footer__list">
                         <li><a href="services.html#webdev">Website Development</a></li>
                         <li><a href="services.html#software">Software Development</a></li>
+                        <li><a href="services.html#marketing">Digital Marketing</a></li>
                         <li><a href="services.html#automation">Business Automation</a></li>
+                        <li><a href="services.html#analytics">Data Analytics</a></li>
                     </ul>
                 </div>
                 <div class="footer__column">
                     <h4 class="footer__column-title">Quick Links</h4>
                     <ul class="footer__list">
                         <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="index.html">Home</a></li>
                     </ul>
                 </div>
                 <div class="footer__contact">
@@ -265,10 +386,10 @@
             </div>
         </div>
         <div class="footer__bottom">
-            <p>&copy; 2026 Kortek Solutions. All rights reserved.</p>
+            <p>&copy; 2026 Kortek Solutions. All rights reserved. | Pricing in KES (Kenyan Shillings)</p>
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
+    <script src="js/main.js" type="module"></script>
 </body>
 </html>
