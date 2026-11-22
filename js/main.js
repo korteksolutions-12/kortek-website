@@ -1,3 +1,7 @@
+// Kortek Premium - Cinematic Animations with GSAP
+import { gsap } from 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js';
+import { ScrollTrigger } from 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js';
+
 // Mobile Navigation Toggle
 document.addEventListener('DOMContentLoaded', function() {
     const navToggle = document.getElementById('navToggle');
@@ -19,7 +23,172 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // Initialize premium animations
+    initPremiumAnimations();
+    
     // Project Filter
+    initProjectFilter();
+    
+    // Contact Form Submission
+    initContactForm();
+    
+    // Smooth scrolling for anchor links
+    initSmoothScroll();
+    
+    // Add scroll animation to elements
+    initScrollReveal();
+    
+    // SEO Schema Markup
+    addSchemaMarkup();
+    
+    // Set current year in footer
+    setFooterYear();
+});
+
+// Premium Cinematic Animations
+function initPremiumAnimations() {
+    gsap.registerPlugin(ScrollTrigger);
+    
+    // Hero Section Entrance Animation
+    const tlHero = gsap.timeline({
+        scrollTrigger: {
+            trigger: '.hero',
+            start: 'top 95%',
+            end: 'top 80%',
+            scrub: 1
+        }
+    });
+    
+    tlHero
+        .to('.hero__content', { opacity: 1, y: 0, duration: 1, ease: 'power3.out' }, 0)
+        .to('.hero__subtitle', { opacity: 1, y: 0, duration: 0.8, ease: 'power2.out' }, 0.2)
+        .to('.hero__text', { opacity: 1, y: 0, duration: 0.8, ease: 'power2.out' }, 0.4)
+        .to('.hero__actions', { opacity: 1, y: 0, duration: 0.8, ease: 'power2.out' }, 0.6)
+        .to('.hero__visual', { opacity: 1, y: 0, duration: 1, ease: 'power3.out' }, 0.8);
+
+    // Services Section Animation
+    gsap.utils.toArray('.service-card').forEach((card, index) => {
+        gsap.from(card, {
+            opacity: 0,
+            y: 50,
+            duration: 0.6,
+            ease: 'power3.out',
+            scrollTrigger: {
+                trigger: card,
+                start: 'top 85%',
+                end: 'top 70%',
+                scrub: 0.5
+            },
+            stagger: 0.1,
+            delay: index * 0.1
+        });
+    });
+
+    // Section Titles Reveal
+    gsap.utils.toArray('.section-title, .section-subtitle').forEach(title => {
+        gsap.from(title, {
+            opacity: 0,
+            y: 30,
+            duration: 0.8,
+            ease: 'power3.out',
+            scrollTrigger: {
+                trigger: title,
+                start: 'top 85%',
+                end: 'top 75%',
+                toggleActions: 'play none none none'
+            }
+        });
+    });
+
+    // CTA Section Animation
+    gsap.from('.cta__title', {
+        opacity: 0,
+        y: 30,
+        duration: 0.8,
+        ease: 'power3.out',
+        scrollTrigger: {
+            trigger: '.cta',
+            start: 'top 80%',
+            end: 'top 60%'
+        }
+    });
+
+    gsap.from('.cta__text', {
+        opacity: 0,
+        y: 30,
+        duration: 0.8,
+        ease: 'power2.out',
+        scrollTrigger: {
+            trigger: '.cta',
+            start: 'top 80%',
+            end: 'top 60%'
+        },
+        delay: 0.2
+    });
+
+    // K Emblem 3D Rotation
+    gsap.to('.k-emblem', {
+        rotation: 360,
+        duration: 20,
+        repeat: -1,
+        ease: 'none'
+    });
+
+    // Orbit Animation
+    gsap.timeline({ repeat: -1, repeatDelay: 2 })
+        .to('.emblem__orbit', {
+            rotation: 360,
+            duration: 30,
+            ease: 'none'
+        }, 0);
+
+    // Floating Accents
+    gsap.to('.dot1', {
+        y: -20,
+        rotation: 10,
+        duration: 6,
+        repeat: -1,
+        yoyo: true,
+        ease: 'sine.inOut'
+    });
+
+    gsap.to('.dot2', {
+        y: 20,
+        rotation: -10,
+        duration: 8,
+        repeat: -1,
+        yoyo: true,
+        ease: 'sine.inOut',
+        delay: 1
+    });
+
+    // Line Accents Pulse
+    gsap.fromTo('.line1, .line2', {
+        opacity: 0.3,
+        scaleX: 0
+    }, {
+        opacity: 0.5,
+        scaleX: 1,
+        duration: 2,
+        repeat: -1,
+        yoyo: true,
+        ease: 'sine.inOut'
+    });
+
+    // Scroll-based parallax
+    gsap.to('.hero::before', {
+        backgroundPosition: 'center 0%',
+        scrollTrigger: {
+            trigger: '.hero',
+            start: 'top top',
+            end: 'bottom top',
+            scrub: true
+        }
+    });
+}
+
+// Project Filter
+function initProjectFilter() {
     const filterButtons = document.querySelectorAll('.filter-btn');
     const projectsGrid = document.getElementById('projectsGrid');
     const projectsEmpty = document.getElementById('projectsEmpty');
@@ -39,6 +208,12 @@ document.addEventListener('DOMContentLoaded', function() {
                     const category = card.getAttribute('data-category');
                     if (filterValue === 'all' || category === filterValue) {
                         card.style.display = 'block';
+                        gsap.from(card, {
+                            opacity: 0,
+                            y: 30,
+                            duration: 0.5,
+                            ease: 'power3.out'
+                        });
                     } else {
                         card.style.display = 'none';
                     }
@@ -60,8 +235,10 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
+}
 
-    // Contact Form Submission
+// Contact Form Submission
+function initContactForm() {
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
@@ -72,30 +249,51 @@ document.addEventListener('DOMContentLoaded', function() {
             const email = document.getElementById('email').value;
             
             if (name && email) {
-                // In production, this would submit to a backend
-                alert('Thank you for your message! We will contact you soon.');
-                this.reset();
+                // Show success message with animation
+                gsap.fromTo('.form-success', {
+                    opacity: 0,
+                    y: 20
+                }, {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.5,
+                    ease: 'power3.out'
+                });
+                
+                // Reset form after delay
+                setTimeout(() => {
+                    this.reset();
+                }, 2000);
             } else {
-                alert('Please fill in all required fields.');
+                // Shake animation for error
+                gsap.to(this, {
+                    shake: 5,
+                    duration: 0.5
+                });
             }
         });
     }
+}
 
-    // Smooth scrolling for anchor links
+// Smooth scrolling for anchor links
+function initSmoothScroll() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             const target = document.querySelector(this.getAttribute('href'));
             if (target) {
                 e.preventDefault();
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    blocks: 'start'
+                gsap.to(window, {
+                    scrollTo: target,
+                    duration: 0.8,
+                    ease: 'power3.inOut'
                 });
             }
         });
     });
+}
 
-    // Add scroll animation to elements
+// Scroll Reveal Animation
+function initScrollReveal() {
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
@@ -104,20 +302,26 @@ document.addEventListener('DOMContentLoaded', function() {
     const observer = new IntersectionObserver(function(entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.style.opacity = 1;
-                entry.target.style.transform = 'translateY(0)';
+                gsap.from(entry.target, {
+                    opacity: 0,
+                    y: 30,
+                    duration: 0.6,
+                    ease: 'power3.out'
+                });
+                observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
 
-    document.querySelectorAll('.service-card, .project-card, .value-card, .why-card').forEach(card => {
-        card.style.opacity = 0;
+    document.querySelectorAll('.service-card, .project-card, .value-card, .why-card, .feature').forEach(card => {
+        card.style.opacity = '0';
         card.style.transform = 'translateY(30px)';
-        card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
         observer.observe(card);
     });
+}
 
-    // SEO Schema Markup
+// SEO Schema Markup
+function addSchemaMarkup() {
     const script = document.createElement('script');
     script.type = 'application/ld+json';
     script.textContent = JSON.stringify({
@@ -148,11 +352,27 @@ document.addEventListener('DOMContentLoaded', function() {
         ]
     });
     document.head.appendChild(script);
+}
 
-    // Set current year in footer
+// Set current year in footer
+function setFooterYear() {
     const yearElement = document.querySelector('.footer__bottom p');
     if (yearElement) {
         const currentYear = new Date().getFullYear();
         yearElement.innerHTML = yearElement.innerHTML.replace('2026', currentYear);
     }
-});
+}
+
+// Performance: Preload critical images
+const preloadImages = () => {
+    const images = [
+        '/favicon.ico'
+    ];
+    
+    images.forEach(src => {
+        const img = new Image();
+        img.src = src;
+    });
+};
+
+preloadImages();
