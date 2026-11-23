@@ -2130,8 +2130,18 @@ p {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-lg);
-    opacity: 0;
-    transform: translateY(30px);
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hero-new__content .is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hero-new__content .hero-new__title, .hero-new__content .hero-new__subtitle, .hero-new__content .hero-new__actions {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .hero-new__badge {
@@ -2234,8 +2244,14 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
-    opacity: 0;
-    transform: translateY(30px);
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hero-new__visual .glass-card {
+    opacity: 1;
+    transform: translateY(0);
+    animation: none;
 }
 
 .hero-image-wrapper {
@@ -2476,6 +2492,13 @@ p {
     
     .stat-label {
         font-size: 0.75rem;
+    }
+    
+    /* Reduce blur on mobile for better performance */
+    .hero-new__badge,
+    .glass-card {
+        backdrop-filter: blur(4px);
+        background: rgba(255, 255, 255, 0.15);
     }
 }
 
