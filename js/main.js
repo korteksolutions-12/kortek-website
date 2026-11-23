@@ -1,6 +1,9 @@
-// Kortek Premium - Cinematic Animations with GSAP
+// Kortek Premium - Cinematic Animations with GSAP (Apple-Style Enhanced)
 import { gsap } from 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js';
 import { ScrollTrigger } from 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js';
+import { ScrollTo } from 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTo.min.js';
+
+gsap.registerPlugin(ScrollTrigger, ScrollTo);
 
 // Mobile Navigation Toggle
 document.addEventListener('DOMContentLoaded', function() {
@@ -26,6 +29,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize premium animations
     initPremiumAnimations();
     
+    // Initialize new Apple-style animations
+    initAppleStyleAnimations();
+    
     // Project Filter
     initProjectFilter();
     
@@ -41,6 +47,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Services Page Animations
     initServicesAnimations();
     
+    // Scroll Progress Indicator
+    initScrollProgress();
+    
     // SEO Schema Markup
     addSchemaMarkup();
     
@@ -48,10 +57,25 @@ document.addEventListener('DOMContentLoaded', function() {
     setFooterYear();
 });
 
+// Scroll Progress Indicator
+function initScrollProgress() {
+    const progressContainer = document.createElement('div');
+    progressContainer.className = 'scroll-progress';
+    progressContainer.innerHTML = '<div class="scroll-progress__bar"></div>';
+    document.body.prepend(progressContainer);
+    
+    const progressBar = progressContainer.querySelector('.scroll-progress__bar');
+    
+    window.addEventListener('scroll', () => {
+        const scrollTop = window.scrollY;
+        const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrollPercent = (scrollTop / scrollHeight) * 100;
+        progressBar.style.width = scrollPercent + '%';
+    });
+}
+
 // Premium Cinematic Animations
 function initPremiumAnimations() {
-    gsap.registerPlugin(ScrollTrigger);
-    
     // Hero Section Entrance Animation
     const tlHero = gsap.timeline({
         scrollTrigger: {
@@ -69,7 +93,7 @@ function initPremiumAnimations() {
         .to('.hero__actions', { opacity: 1, y: 0, duration: 0.8, ease: 'power2.out' }, 0.6)
         .to('.hero__visual', { opacity: 1, y: 0, duration: 1, ease: 'power3.out' }, 0.8);
 
-    // Services Section Animation
+    // Services Section Animation with staggered timing
     gsap.utils.toArray('.service-card').forEach((card, index) => {
         gsap.from(card, {
             opacity: 0,
@@ -187,6 +211,247 @@ function initPremiumAnimations() {
             end: 'bottom top',
             scrub: true
         }
+    });
+}
+
+// Apple-Style Enhanced Animations
+function initAppleStyleAnimations() {
+    // Trust Section Animations
+    gsap.utils.toArray('.trust__title, .trust__text').forEach(element => {
+        gsap.from(element, {
+            opacity: 0,
+            y: 20,
+            duration: 0.8,
+            ease: 'power3.out',
+            scrollTrigger: {
+                trigger: element,
+                start: 'top 85%',
+                end: 'top 75%',
+                toggleActions: 'play none none none'
+            }
+        });
+    });
+
+    // Trust Logo Fade-in with staggered timing
+    gsap.utils.toArray('.trust__logo').forEach((logo, index) => {
+        gsap.from(logo, {
+            opacity: 0,
+            scale: 0.8,
+            duration: 0.5,
+            ease: 'power3.out',
+            scrollTrigger: {
+                trigger: logo,
+                start: 'top 85%',
+                end: 'top 70%',
+                toggleActions: 'play none none none'
+            },
+            delay: index * 0.1
+        });
+    });
+
+    // Trust Stats Staggered Reveal
+    gsap.utils.toArray('.trust__stat-item').forEach((stat, index) => {
+        gsap.from(stat, {
+            opacity: 0,
+            y: 20,
+            duration: 0.6,
+            ease: 'power3.out',
+            scrollTrigger: {
+                trigger: stat,
+                start: 'top 85%',
+                end: 'top 75%',
+                toggleActions: 'play none none none'
+            },
+            delay: index * 0.15
+        });
+    });
+
+    // How It Works Section
+    gsap.utils.toArray('.how-it-works__title, .how-it-works__subtitle').forEach(element => {
+        gsap.from(element, {
+            opacity: 0,
+            y: 20,
+            duration: 0.8,
+            ease: 'power3.out',
+            scrollTrigger: {
+                trigger: element,
+                start: 'top 85%',
+                end: 'top 75%',
+                toggleActions: 'play none none none'
+            }
+        });
+    });
+
+    // How Steps Sequential Reveal
+    gsap.utils.toArray('.how-step').forEach((step, index) => {
+        gsap.from(step, {
+            opacity: 0,
+            x: -30,
+            duration: 0.6,
+            ease: 'power3.out',
+            scrollTrigger: {
+                trigger: step,
+                start: 'top 85%',
+                end: 'top 75%',
+                toggleActions: 'play none none none'
+            },
+            delay: index * 0.2
+        });
+    });
+
+    // How Step Number Circle Animation
+    gsap.utils.toArray('.how-step__number').forEach(number => {
+        gsap.from(number, {
+            scale: 0,
+            duration: 0.5,
+            ease: 'back.out(1.7)',
+            scrollTrigger: {
+                trigger: number.parentElement,
+                start: 'top 85%',
+                end: 'top 75%',
+                toggleActions: 'play none none none'
+            }
+        });
+    });
+
+    // How It Works Visual (Emblem)
+    gsap.from('.how-it-works__visual .k-emblem', {
+        opacity: 0,
+        scale: 0.8,
+        duration: 0.8,
+        ease: 'power3.out',
+        scrollTrigger: {
+            trigger: '.how-it-works',
+            start: 'top 85%',
+            end: 'top 70%',
+            toggleActions: 'play none none none'
+        }
+    });
+
+    // Mid CTA Section
+    gsap.utils.toArray('.mid-cta__title, .mid-cta__subtitle').forEach(element => {
+        gsap.from(element, {
+            opacity: 0,
+            y: 30,
+            duration: 0.8,
+            ease: 'power3.out',
+            scrollTrigger: {
+                trigger: element,
+                start: 'top 85%',
+                end: 'top 75%',
+                toggleActions: 'play none none none'
+            }
+        });
+    });
+
+    // Mid CTA Features with staggered reveal
+    gsap.utils.toArray('.mid-cta__feature').forEach((feature, index) => {
+        gsap.from(feature, {
+            opacity: 0,
+            y: 20,
+            duration: 0.5,
+            ease: 'power2.out',
+            scrollTrigger: {
+                trigger: feature,
+                start: 'top 85%',
+                end: 'top 75%',
+                toggleActions: 'play none none none'
+            },
+            delay: index * 0.1
+        });
+    });
+
+    // Portfolio Gallery Section
+    gsap.utils.toArray('.portfolio-gallery__title, .portfolio-gallery__subtitle').forEach(element => {
+        gsap.from(element, {
+            opacity: 0,
+            y: 20,
+            duration: 0.8,
+            ease: 'power3.out',
+            scrollTrigger: {
+                trigger: element,
+                start: 'top 85%',
+                end: 'top 75%',
+                toggleActions: 'play none none none'
+            }
+        });
+    });
+
+    // Portfolio Items with staggered reveal and 3D tilt
+    gsap.utils.toArray('.portfolio-item').forEach((item, index) => {
+        gsap.from(item, {
+            opacity: 0,
+            y: 30,
+            rotationX: 10,
+            duration: 0.6,
+            ease: 'power3.out',
+            scrollTrigger: {
+                trigger: item,
+                start: 'top 85%',
+                end: 'top 70%',
+                toggleActions: 'play none none none'
+            },
+            delay: index * 0.1
+        });
+    });
+
+    // Enhanced CTA Section Animations
+    gsap.utils.toArray('.cta__title, .cta__text, .cta__subtitle').forEach((element, index) => {
+        gsap.from(element, {
+            opacity: 0,
+            y: 30,
+            duration: 0.8,
+            ease: 'power3.out',
+            scrollTrigger: {
+                trigger: '.cta',
+                start: 'top 80%',
+                end: 'top 60%'
+            },
+            delay: index * 0.2
+        });
+    });
+
+    // Service Cards Enhanced Hover Effects
+    gsap.utils.toArray('.service-card').forEach(card => {
+        // Add 3D tilt on hover
+        card.addEventListener('mouseenter', function(e) {
+            const rect = this.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const rotateX = (y - rect.height / 2) / 20;
+            const rotateY = (x - rect.width / 2) / 20;
+            gsap.set(this, {
+                rotationX: rotateX,
+                rotationY: rotateY,
+                scale: 1.03
+            });
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            gsap.set(this, {
+                rotationX: 0,
+                rotationY: 0,
+                scale: 1
+            });
+        });
+    });
+
+    // Service Card Staggered Animation
+    gsap.utils.toArray('.service-card').forEach((card, index) => {
+        gsap.from(card, {
+            opacity: 0,
+            y: 50,
+            duration: 0.6,
+            ease: 'power3.out',
+            scrollTrigger: {
+                trigger: card,
+                start: 'top 85%',
+                end: 'top 70%',
+                scrub: 0.5
+            },
+            stagger: 0.1,
+            delay: index * 0.1
+        });
     });
 }
 
