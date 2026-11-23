@@ -12,6 +12,7 @@
     <title>Services - Kortek Solutions | Premium Tech Services</title>
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='40' fill='%232563eb'/><text x='50' y='58' font-family='Arial, sans-serif' font-size='48' font-weight='bold' fill='white' text-anchor='middle'>K</text></svg>">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/service-images.css">
     <!-- GSAP for premium animations -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
@@ -87,21 +88,8 @@
                         <a href="contact.html" class="btn btn--primary">Request Quote</a>
                     </div>
                     <div class="service-category__visual">
-                        <div class="service-visual">
-                            <div class="browser-window">
-                                <div class="browser__bar">
-                                    <span class="browser__dot red"></span>
-                                    <span class="browser__dot yellow"></span>
-                                    <span class="browser__dot green"></span>
-                                </div>
-                                <div class="browser__screen" id="webdev-screen">
-                                    <div class="mock-site">
-                                        <div class="mock-header"></div>
-                                        <div class="mock-hero"></div>
-                                        <div class="mock-content"></div>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="service-image-wrapper">
+                            <img src="assets/images/services/website-development.jpg" alt="Modern website design on computer screen" class="service-image" loading="lazy" />
                         </div>
                     </div>
                 </div>
@@ -125,10 +113,10 @@
                         <a href="contact.html" class="btn btn--primary">Request Quote</a>
                     </div>
                     <div class="service-category__visual">
-                        <div class="service-visual">
-                            <div class="laptop">
-                                <div class="laptop__screen" id="software-screen"></div>
-                                <div class="laptop__base"></div>
+                        <div class="service-image-wrapper">
+                            <img src="assets/images/services/software-development.jpg" alt="Software developer working on code in modern workspace" class="service-image" loading="lazy" onerror="this.style.display='none'" />
+                            <div class="service-placeholder" style="display: none; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); padding: 40px; border-radius: var(--radius-lg); text-align: center;">
+                                <span class="placeholder-text" style="color: #fff; font-family: var(--font-heading); font-size: 1.1rem;">Software Development</span>
                             </div>
                         </div>
                     </div>
@@ -153,14 +141,8 @@
                         <a href="contact.html" class="btn btn--primary">Request Quote</a>
                     </div>
                     <div class="service-category__visual">
-                        <div class="service-visual">
-                            <div class="dashboard">
-                                <div class="chart-bar"></div>
-                                <div class="chart-bar"></div>
-                                <div class="chart-bar"></div>
-                                <div class="chart-line"></div>
-                                <div class="metric-display"></div>
-                            </div>
+                        <div class="service-image-wrapper">
+                            <img src="assets/images/services/digital-marketing.jpg" alt="Digital marketing team analyzing data in modern office workspace" class="service-image" loading="lazy" />
                         </div>
                     </div>
                 </div>
@@ -184,14 +166,8 @@
                         <a href="contact.html" class="btn btn--primary">Request Quote</a>
                     </div>
                     <div class="service-category__visual">
-                        <div class="service-visual">
-                            <div class="automation-flow">
-                                <div class="flow-node node1"></div>
-                                <div class="flow-arrow"></div>
-                                <div class="flow-node node2"></div>
-                                <div class="flow-arrow"></div>
-                                <div class="flow-node node3"></div>
-                            </div>
+                        <div class="service-image-wrapper">
+                            <img src="assets/images/services/business-automation.jpg" alt="Business automation workflow with interconnected systems" class="service-image" loading="lazy" onerror="this.style.display='none'" />
                         </div>
                     </div>
                 </div>
@@ -215,16 +191,8 @@
                         <a href="contact.html" class="btn btn--primary">Request Quote</a>
                     </div>
                     <div class="service-category__visual">
-                        <div class="service-visual">
-                            <div class="analytics-dashboard">
-                                <div class="metric-card">
-                                    <div class="metric-value">245K</div>
-                                    <div class="metric-label">Users</div>
-                                </div>
-                                <div class="chart-container">
-                                    <div class="bar-chart"></div>
-                                </div>
-                            </div>
+                        <div class="service-image-wrapper">
+                            <img src="assets/images/services/data-analytics.jpg" alt="Data analytics dashboard with charts and metrics" class="service-image" loading="lazy" onerror="this.style.display='none'" />
                         </div>
                     </div>
                 </div>
@@ -248,13 +216,8 @@
                         <a href="contact.html" class="btn btn--primary">Request Quote</a>
                     </div>
                     <div class="service-category__visual">
-                        <div class="service-visual">
-                            <div class="solution-grid">
-                                <div class="solution-item s1"></div>
-                                <div class="solution-item s2"></div>
-                                <div class="solution-item s3"></div>
-                                <div class="solution-item s4"></div>
-                            </div>
+                        <div class="service-image-wrapper">
+                            <img src="assets/images/services/business-solutions.jpg" alt="Comprehensive business solutions including branding and consulting" class="service-image" loading="lazy" onerror="this.style.display='none'" />
                         </div>
                     </div>
                 </div>

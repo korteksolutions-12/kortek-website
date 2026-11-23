@@ -1,0 +1,32 @@
+# Image Assets Directory
+
+This directory is organized for professional stock images from Pexels and Unsplash.
+
+Directory Structure:
+├── hero/              - Homepage hero images
+├── services/          - Service section images
+│   ├── web-development/
+│   ├── software-dev/
+│   ├── digital-marketing/
+│   ├── automation/
+│   ├── analytics/
+│   └── solutions/
+├── about/             - About Us section images
+├── trust/             - Client logos and trust indicators
+├── portfolio/         - Project showcase images
+└── icons/             - UI icons and decorative elements
+
+Naming Convention:
+- hero-image.webp - Main hero background
+- service-[name]-visual.webp - Service showcase
+- team-[n].webp - Team member photos
+- project-[n]-preview.webp - Portfolio previews
+
+Image Optimization:
+- Format: WebP preferred, with JPEG fallback
+- Quality: 80-85% for balance of quality/performance
+- Max width: 1920px for hero, 800px for thumbnails
+- Compression: ImageOptim or similar
+
+Placeholders will be replaced with actual images.
+.gitkeep
