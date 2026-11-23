@@ -5,6 +5,14 @@ import { ScrollTo } from 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Scr
 
 gsap.registerPlugin(ScrollTrigger, ScrollTo);
 
+// Hide loading spinner after page load
+window.addEventListener('load', function() {
+    const loader = document.getElementById('loader');
+    if (loader) {
+        loader.classList.add('hidden');
+    }
+});
+
 // Mobile Navigation Toggle
 document.addEventListener('DOMContentLoaded', function() {
     const navToggle = document.getElementById('navToggle');
