@@ -1917,3 +1917,138 @@ p {
         font-size: 2rem;
     }
 }
+/* ==================== COMPREHENSIVE MOBILE & SMARTPHONE OPTIMIZATIONS ==================== */
+
+@media (max-width: 1024px) {
+    .header__container {
+        padding: var(--spacing-md);
+    }
+    .hero__container {
+        gap: var(--spacing-lg);
+        padding: 0 var(--spacing-sm);
+    }
+    .hero__title {
+        font-size: clamp(2rem, 6vw, 3rem);
+    }
+    .k-emblem {
+        width: 160px;
+        height: 160px;
+    }
+    .emblem__k {
+        font-size: 80px;
+    }
+}
+
+@media (max-width: 768px) {
+    .trust__grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .trust__stats {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+    .how-it-works__container {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+    .mid-cta__features {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+    .service-category__grid {
+        grid-template-columns: 1fr;
+    }
+    .footer__container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .footer__links {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .footer__columns {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 1rem;
+    }
+    .header__container {
+        padding: 0.75rem 1rem;
+    }
+    .logo {
+        font-size: 1.25rem;
+    }
+    .hero {
+        padding-top: 60px;
+        min-height: auto;
+        padding-bottom: 2rem;
+    }
+    .hero__title {
+        font-size: 1.8rem;
+        line-height: 1.15;
+    }
+    .hero__subtitle {
+        font-size: 1.1rem;
+    }
+    .hero__text {
+        font-size: 0.95rem;
+    }
+    .hero__actions {
+        flex-direction: column;
+        gap: 0.75rem;
+        width: 100%;
+    }
+    .btn {
+        width: 100%;
+        padding: 0.8rem 1.5rem;
+        font-size: 0.95rem;
+    }
+    .k-emblem {
+        width: 130px;
+        height: 130px;
+    }
+    .emblem__k {
+        font-size: 64px;
+    }
+    .services__grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    .service-card {
+        padding: 1.25rem;
+    }
+    .trust__grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    .trust__logo {
+        height: 30px;
+    }
+    .trust__stat-number {
+        font-size: 2rem;
+    }
+    .portfolio-gallery__grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    .portfolio-item__image {
+        height: 180px;
+    }
+    .footer__contact-info {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .hero__title {
+        font-size: 1.6rem;
+    }
+    .trust__grid {
+        grid-template-columns: 1fr;
+    }
+}
