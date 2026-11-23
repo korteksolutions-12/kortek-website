@@ -2090,3 +2090,407 @@ p {
         grid-template-columns: 1fr;
     }
 }
+
+/* ==================== NEW APPLE-STYLE HERO SECTION ==================== */
+
+/* Hero Section - Professional Business Hero */
+.hero-new {
+    min-height: calc(100vh - 80px);
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, var(--color-obsidian) 0%, #1a1a1e 50%, var(--color-deep-violet) 100%);
+    position: relative;
+    overflow: hidden;
+    padding-top: 80px;
+    isolation: isolate;
+}
+
+.hero-new::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: 
+        radial-gradient(circle at 20% 20%, rgba(139, 92, 246, 0.15) 0%, transparent 30%),
+        radial-gradient(circle at 80% 20%, rgba(196, 181, 253, 0.1) 0%, transparent 30%),
+        radial-gradient(circle at 40% 80%, rgba(139, 92, 246, 0.1) 0%, transparent 40%);
+    z-index: 0;
+}
+
+.hero-new__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: clamp(40px, 8vw, 80px);
+    position: relative;
+    z-index: 1;
+    max-width: 1400px;
+}
+
+.hero-new__content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.hero-new__badge {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius-full);
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    backdrop-filter: blur(12px);
+    max-width: fit-content;
+    margin-bottom: var(--spacing-md);
+}
+
+.badge__text--hero {
+    color: var(--color-lavender);
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.hero-new__title {
+    font-family: var(--font-heading);
+    font-size: clamp(2.75rem, 8vw, 4.5rem);
+    font-weight: 800;
+    line-height: 1.1;
+    margin: 0;
+    color: var(--white);
+    letter-spacing: -1px;
+}
+
+.hero-new__title .title__highlight {
+    background: linear-gradient(90deg, var(--color-electric-purple) 0%, var(--color-lavender) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: 800;
+}
+
+.hero-new__subtitle {
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
+    color: var(--gray-color);
+    line-height: 1.6;
+    max-width: 65ch;
+    font-weight: 400;
+}
+
+.hero-new__actions {
+    display: flex;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+    margin-top: var(--spacing-lg);
+}
+
+.hero-new__stats {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    margin-top: var(--spacing-xl);
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.stat-number {
+    font-family: var(--font-heading);
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-weight: 800;
+    background: linear-gradient(90deg, var(--color-lavender), var(--color-electric-purple));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 0.25rem;
+}
+
+.stat-label {
+    color: var(--gray-color);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+
+.stat-divider {
+    height: 40px;
+    width: 1px;
+    background: rgba(139, 92, 246, 0.3);
+    margin: 0 1.5rem;
+    opacity: 0.5;
+}
+
+.hero-new__visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.hero-image-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    aspect-ratio: 4/3;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-xl), var(--shadow-glow);
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Glass-effect floating cards */
+.glass-card {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(139, 92, 246, 0.2);
+    border-radius: var(--radius-lg);
+    padding: 1rem;
+    opacity: 0;
+    animation: floatIn 0.8s ease-out forwards;
+    pointer-events: none;
+    transform: translateY(20px);
+}
+
+.glass-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: var(--radius-lg);
+    background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 50%);
+    opacity: 0;
+}
+
+.glass-card:hover::before {
+    opacity: 1;
+}
+
+.glass-card--small {
+    top: 15%;
+    right: -40px;
+    padding: 0.75rem 1.25rem;
+    animation-delay: 0.3s;
+    max-width: 180px;
+}
+
+.glass-card--large {
+    bottom: 25%;
+    left: -50px;
+    padding: 1.25rem;
+    animation-delay: 0.5s;
+    max-width: 220px;
+}
+
+.glass-card__accent {
+    color: var(--color-electric-purple);
+    font-size: 1.25rem;
+    font-weight: 800;
+    margin-bottom: 0.25rem;
+    display: block;
+}
+
+.glass-card__text {
+    color: var(--white);
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    margin: 0;
+    line-height: 1.3;
+}
+
+@keyframes floatIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.glass-card__header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* ==================== END NEW HERO SECTION ==================== */
+
+/* ==================== RESPONSIVE FOR NEW HERO SECTION ==================== */
+
+@media (max-width: 1024px) {
+    .hero-new__container {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+    
+    .hero-new__title {
+        font-size: clamp(2rem, 6vw, 3rem);
+    }
+    
+    .hero-new__subtitle {
+        font-size: clamp(1.1rem, 3vw, 1.5rem);
+    }
+    
+    .hero-new__actions {
+        justify-content: center;
+    }
+    
+    .hero-image-wrapper {
+        max-width: 400px;
+    }
+    
+    .stat-divider {
+        margin: 0 1rem;
+    }
+    
+    .hero-new__stats {
+        gap: 2rem;
+    }
+    
+    .stat-number {
+        font-size: clamp(1.25rem, 3vw, 2rem);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-new {
+        min-height: 100vh;
+        padding-top: 60px;
+    }
+    
+    .hero-new__container {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+        padding: 0 var(--spacing-sm);
+    }
+    
+    .hero-new__content {
+        gap: var(--spacing-md);
+        text-align: center;
+    }
+    
+    .hero-new__badge {
+        margin: 0 auto;
+    }
+    
+    .hero-new__actions {
+        justify-content: center;
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+    }
+    
+    .hero-new__stats {
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+    
+    .stat-divider {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 40px;
+        width: 1px;
+        background: rgba(139, 92, 246, 0.3);
+        opacity: 0.5;
+    }
+    
+    .hero-image-wrapper {
+        max-width: 350px;
+        aspect-ratio: 4/3;
+    }
+    
+    .glass-card--small {
+        top: 80%;
+        right: -30px;
+        max-width: 150px;
+    }
+    
+    .glass-card--large {
+        bottom: 10%;
+        left: 50%;
+        transform: translateX(-50%);
+        max-width: 180px;
+    }
+    
+    .hero-image-wrapper::before {
+        content: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-new__title {
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+    
+    .hero-new__subtitle {
+        font-size: 1.1rem;
+        max-width: 90%;
+    }
+    
+    .hero-image-wrapper {
+        max-width: 280px;
+        aspect-ratio: 16/9;
+    }
+    
+    .glass-card--small {
+        top: 70%;
+        right: -20px;
+        max-width: 130px;
+        padding: 0.5rem 0.75rem;
+    }
+    
+    .glass-card--large {
+        bottom: 5%;
+        left: 50%;
+        transform: translateX(-50%);
+        max-width: 150px;
+        padding: 0.75rem;
+    }
+    
+    .stat-number {
+        font-size: 2rem;
+    }
+    
+    .stat-label {
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .hero-new__title {
+        font-size: 1.75rem;
+    }
+    
+    .hero-image-wrapper {
+        max-width: 250px;
+    }
+    
+    .glass-card--small {
+        top: 65%;
+        right: -15px;
+        max-width: 110px;
+    }
+}
