@@ -3,6 +3,7 @@ const { defineConfig } = require('@playwright/test');
 module.exports = defineConfig({
   testDir: './tests',
   testMatch: '**/*.spec.js',
+  snapshotDir: './tests/visual.spec.js-snapshots',
   timeout: 60000,
   expect: {
     toMatchSnapshot: {

@@ -11,7 +11,7 @@ test('Visual regression: Homepage', async ({ page }) => {
     `
   });
   const screenshot = await page.screenshot({ fullPage: true, animations: 'disabled' });
-  expect(screenshot).toMatchSnapshot('visual.spec.js-snapshots/Homepage-linux.png', { maxDiffPixels: 1000, threshold: 0.2 });
+  expect(screenshot).toMatchSnapshot('Homepage', { maxDiffPixels: 1000, threshold: 0.2 });
 });
 
 test('Visual regression: About', async ({ page }) => {
@@ -24,7 +24,7 @@ test('Visual regression: About', async ({ page }) => {
     `
   });
   const screenshot = await page.screenshot({ fullPage: true, animations: 'disabled' });
-  expect(screenshot).toMatchSnapshot('visual.spec.js-snapshots/About-linux.png', { maxDiffPixels: 1000, threshold: 0.2 });
+  expect(screenshot).toMatchSnapshot('About', { maxDiffPixels: 1000, threshold: 0.2 });
 });
 
 test('Visual regression: Services', async ({ page }) => {
@@ -37,7 +37,7 @@ test('Visual regression: Services', async ({ page }) => {
     `
   });
   const screenshot = await page.screenshot({ fullPage: true, animations: 'disabled' });
-  expect(screenshot).toMatchSnapshot('visual.spec.js-snapshots/Services-linux.png', { maxDiffPixels: 1000, threshold: 0.2 });
+  expect(screenshot).toMatchSnapshot('Services', { maxDiffPixels: 1000, threshold: 0.2 });
 });
 
 test('Visual regression: Projects', async ({ page }) => {
@@ -50,7 +50,7 @@ test('Visual regression: Projects', async ({ page }) => {
     `
   });
   const screenshot = await page.screenshot({ fullPage: true, animations: 'disabled' });
-  expect(screenshot).toMatchSnapshot('visual.spec.js-snapshots/Projects-linux.png', { maxDiffPixels: 1000, threshold: 0.2 });
+  expect(screenshot).toMatchSnapshot('Projects', { maxDiffPixels: 1000, threshold: 0.2 });
 });
 
 test('Visual regression: Contact', async ({ page }) => {
@@ -63,5 +63,5 @@ test('Visual regression: Contact', async ({ page }) => {
     `
   });
   const screenshot = await page.screenshot({ fullPage: true, animations: 'disabled' });
-  expect(screenshot).toMatchSnapshot('visual.spec.js-snapshots/Contact-linux.png', { maxDiffPixels: 1000, threshold: 0.2 });
+  expect(screenshot).toMatchSnapshot('Contact', { maxDiffPixels: 1000, threshold: 0.2 });
 });
