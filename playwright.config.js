@@ -1,5 +1,4 @@
 const { defineConfig } = require('@playwright/test');
-const path = require('path');
 
 module.exports = defineConfig({
   testDir: './tests',
@@ -10,8 +9,6 @@ module.exports = defineConfig({
       threshold: 0.2,
     },
   },
-  snapshotDir: path.resolve(__dirname, 'tests', 'visual.spec.js-snapshots'),
-  snapshotSuffix: '-visual-linux',
   reporter: [['line', { isStrict: false }]],
   use: {
     baseURL: 'http://localhost:8080',
