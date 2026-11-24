@@ -1,0 +1,109 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Kortek Project Registry",
+  "description": "A centralized registry of all client projects, repositories, and deployment information",
+  "type": "object",
+  "properties": {
+    "projects": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/project"
+      }
+    }
+  },
+  "$defs": {
+    "project": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique project identifier (slug format)"
+        },
+        "name": {
+          "type": "string",
+          "description": "Client/project name"
+        },
+        "clientId": {
+          "type": "string",
+          "description": "Reference to client ID in registry"
+        },
+        "repository": {
+          "$ref": "#/$defs/repository"
+        },
+        "deployment": {
+          "$ref": "#/$defs/deployment"
+        },
+        "requirements": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Technical requirements/features needed"
+        },
+        "qualityTier": {
+          "type": "string",
+          "enum": ["basic", "standard", "premium"],
+          "description": "Quality level with corresponding QA requirements"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["active", "maintenance", "completed", "archived"]
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": ["id", "name", "repository", "qualityTier", "status"]
+    },
+    "repository": {
+      "type": "object",
+      "properties": {
+        "gitUrl": {
+          "type": "string",
+          "format": "uri"
+        },
+        "defaultBranch": {
+          "type": "string",
+          "default": "main"
+        },
+        "framework": {
+          "type": "string",
+          "description": "Technology stack identifier"
+        },
+        "buildCommand": {
+          "type": "string"
+        },
+        "outputDirectory": {
+          "type": "string"
+        }
+      },
+      "required": ["gitUrl"]
+    },
+    "deployment": {
+      "type": "object",
+      "properties": {
+        "url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "platform": {
+          "type": "string",
+          "enum": ["github-pages", "netlify", "vercel", "custom", "none"]
+        },
+        "branch": {
+          "type": "string",
+          "default": "main"
+        },
+        "lastDeployed": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    }
+  }
+}

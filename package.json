@@ -1,0 +1,52 @@
+{
+  "name": "developer",
+  "version": "1.0.0",
+  "description": "A professional, modern, responsive website for Kortek - technology and business solutions company serving Kenya and international clients.",
+  "main": "index.js",
+  "scripts": {
+    "lint:css": "stylelint \"**/*.css\" --fix",
+    "lint:js": "eslint \"js/**/*.js\"",
+    "lint:html": "htmlhint \"**/*.html\"",
+    "validate:html": "html-validate \"**/*.html\"",
+    "test:a11y": "playwright test tests/a11y.spec.js",
+    "test:performance": "lhci autorun",
+    "test:links": "node scripts/check-links.js",
+    "test:images": "node scripts/check-images.js",
+    "test:responsive": "playwright test tests/responsive.spec.js",
+    "test:visual": "playwright test tests/visual.spec.js",
+    "test": "npm-run-all --parallel lint:*",
+    "test:all": "npm-run-all lint:css lint:js lint:html validate:html test:links test:images test:a11y",
+    "check": "npm-run-all lint:* test:* --parallel=false",
+    "start": "npx serve . -l 3000",
+    "dev": "npm run start & npx lhci autorun --collect.url=http://localhost:3000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/korteksolutions-12/kortek-website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/korteksolutions-12/kortek-website/issues"
+  },
+  "homepage": "https://github.com/korteksolutions-12/kortek-website#readme",
+  "devDependencies": {
+    "@axe-core/playwright": "^4.14.0",
+    "@playwright/test": "^1.65.1",
+    "eslint": "^10.15.0",
+    "html-validate": "^11.21.1",
+    "html-validator-cli": "^7.0.1",
+    "htmlhint": "^1.9.2",
+    "jsdom": "^31.0.1",
+    "lhci": "^4.1.2",
+    "lighthouse": "^13.6.0",
+    "node-fetch": "^3.3.2",
+    "npm-run-all": "^4.1.5",
+    "playwright": "^1.65.1",
+    "serve": "^14.2.8",
+    "stylelint": "^18.1.0",
+    "stylelint-config-standard": "^41.1.0"
+  }
+}

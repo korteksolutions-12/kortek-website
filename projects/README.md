@@ -1,61 +1,72 @@
-# Project Documentation
+# Project Registry
 
-This folder contains documentation for the projects showcased on the Kortek website portfolio.
+This directory contains the Kortek Project Registry System - a centralized tracking system for all client projects.
 
-## Documentation Template
+## Files
 
-For each project, create a markdown file with the following structure:
+- `registry.json` - JSON Schema for the project registry
+- `registry-data.json` - Current project data
 
-```markdown
-# Project Name
+## Schema Definition
 
-**Category:** Website Development / Software Development / Business Automation / Digital Marketing / Data Analytics / Business Solutions
+The registry follows a structured JSON schema that tracks:
 
-**Duration:** Start Date - End Date (e.g., Jan 2024 - Mar 2024)
+### Project Fields
+- `id` - Unique project identifier (slug format)
+- `name` - Client/project name
+- `clientId` - Reference to client ID
+- `description` - Brief project description
+- `repository` - Git repository details
+- `deployment` - Deployment information
+- `requirements` - Technical requirements/features
+- `qualityTier` - Quality level (basic/standard/premium)
+- `status` - Project status
+- `createdAt/updatedAt` - Timestamps
 
-**Client:** Client Name (or "Confidential" if under NDA)
+### Repository Fields
+- `gitUrl` - Git repository URL
+- `defaultBranch` - Default branch name
+- `framework` - Technology stack
+- `buildCommand` - Build command
+- `outputDirectory` - Build output directory
 
-## Overview
-Brief description of the project and business challenge.
+### Deployment Fields
+- `url` - Live deployment URL
+- `platform` - Hosting platform
+- `branch` - Deployment branch
+- `lastDeployed` - Last deployment timestamp
 
-## Objectives
-- Objective 1
-- Objective 2
-- Objective 3
+## Current Projects
 
-## Solution
-Description of the solution provided.
+| ID | Name | Client | Tier | Status |
+|----|------|--------|------|--------|
+| kortek-website | Kortek Main Website | Kortek Solutions | premium | active |
+| qura-website | Qura Beauty Website | Qura Beauty | standard | active |
+| kortek-developer | Kortek Developer Workspace | Kortek Solutions | basic | active |
 
-## Technologies Used
-- Technology 1
-- Technology 2
-- Technology 3
+## Usage
 
-## Results
-Quantifiable results and outcomes.
+### Add New Project
+```bash
+# Edit registry-data.json
+vim projects/registry-data.json
 
-## Key Features
-- Feature 1
-- Feature 2
-- Feature 3
-
-## Gallery
-Add screenshots to the `images/` folder and reference them here.
+# Add project entry to projects array
 ```
 
-## Current Project Placeholder Files
+### Query Projects
+```bash
+# List all projects
+cat projects/registry-data.json | jq '.projects[].name'
 
-Create individual documentation files for each real project. The following placeholder structure is in `projects.html`:
+# Find by client
+cat projects/registry-data.json | jq '.projects[] | select(.clientId == "kortek") | .name'
+```
 
-1. **E-Commerce Platform** - Retail e-commerce website
-2. **Team Collaboration Software** - Custom web application
-3. **HR Process Automation** - Workflow automation system
-4. **Product Launch Campaign** - Digital marketing campaign
-5. **Professional Services Website** - Corporate website
-6. **Inventory Management System** - Desktop/mobile application
-7. **Business Intelligence Dashboard** - Analytics platform
-8. **SME Digital Transformation** - Consulting project
+## Integration
 
----
-
-**Ready for project documentation!**
+The registry is automatically read by the QA pipeline and documentation generators to:
+- Validate repository URLs
+- Check deployment status
+- Generate project dashboards
+- Track requirements against deliverables

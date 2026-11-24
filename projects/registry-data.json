@@ -1,0 +1,115 @@
+{
+  "clients": {
+    "kortek": {
+      "name": "Kortek Solutions",
+      "contact": {
+        "primary": "info@kortek.co.ke",
+        "phone": "+254 700 000 000"
+      },
+      "address": "123 Tech Park, 4th Floor, Westlands, Nairobi, Kenya"
+    },
+    "qura": {
+      "name": "Qura Beauty",
+      "contact": {
+        "primary": "hello@qura.co.ke",
+        "phone": "+254 700 123 456"
+      },
+      "address": "Nairobi, Kenya",
+      "githubRepo": "korteksolutions-12/qura-website"
+    }
+  },
+  "projects": [
+    {
+      "id": "kortek-website",
+      "name": "Kortek Main Website",
+      "clientId": "kortek",
+      "description": "Premium technology and business solutions website",
+      "repository": {
+        "gitUrl": "https://github.com/korteksolutions-12/kortek-website",
+        "defaultBranch": "main",
+        "framework": "HTML/CSS/JS",
+        "buildCommand": "npm run build",
+        "outputDirectory": "/"
+      },
+      "deployment": {
+        "url": "https://kortek.co.ke",
+        "platform": "github-pages",
+        "branch": "main",
+        "lastDeployed": null
+      },
+      "requirements": [
+        "responsive-design",
+        "accessibility-compliant",
+        "performance-optimized",
+        "multi-page-navigation",
+        "service-showcase",
+        "contact-form",
+        "pricing-tables",
+        "analytics-integration"
+      ],
+      "qualityTier": "premium",
+      "status": "active",
+      "createdAt": "2026-01-15T00:00:00Z",
+      "updatedAt": "2026-11-24T00:00:00Z"
+    },
+    {
+      "id": "qura-website",
+      "name": "Qura Beauty Website",
+      "clientId": "qura",
+      "description": "E-commerce beauty products website",
+      "repository": {
+        "gitUrl": "https://github.com/korteksolutions-12/qura-website",
+        "defaultBranch": "main",
+        "framework": "HTML/CSS/JS",
+        "buildCommand": "npm run build",
+        "outputDirectory": "/"
+      },
+      "deployment": {
+        "url": "https://korteksolutions-12.github.io/qura-website/",
+        "platform": "github-pages",
+        "branch": "main",
+        "lastDeployed": null
+      },
+      "requirements": [
+        "product-showcase",
+        "e-commerce",
+        "beauty-industry",
+        "mobile-responsive",
+        "gallery-section",
+        "contact-form"
+      ],
+      "qualityTier": "standard",
+      "status": "active",
+      "createdAt": "2026-06-01T00:00:00Z",
+      "updatedAt": "2026-11-24T00:00:00Z"
+    },
+    {
+      "id": "kortek-developer",
+      "name": "Kortek Developer Workspace",
+      "clientId": "kortek",
+      "description": "Development/QA workspace and documentation",
+      "repository": {
+        "gitUrl": "https://github.com/korteksolutions-12/kortek-website.git",
+        "defaultBranch": "main",
+        "framework": "HTML/CSS/JS",
+        "buildCommand": "npm run build",
+        "outputDirectory": "/"
+      },
+      "deployment": {
+        "url": null,
+        "platform": "none",
+        "branch": "main",
+        "lastDeployed": null
+      },
+      "requirements": [
+        "documentation",
+        "qa-pipeline",
+        "automation-scripts"
+      ],
+      "qualityTier": "basic",
+      "status": "active",
+      "createdAt": "2026-11-01T00:00:00Z",
+      "updatedAt": "2026-11-24T00:00:00Z"
+    }
+  ]
+}
