@@ -2,10 +2,10 @@ const globals = require('globals');
 
 module.exports = [
   {
-    files: ['js/**/*.js'],
+    files: ['**/*.js'],
     languageOptions: {
       ecmaVersion: 'latest',
-      sourceType: 'module',
+      sourceType: 'commonjs',
       globals: {
         ...globals.browser,
         ...globals.es2021,
