@@ -10,7 +10,8 @@ module.exports = defineConfig({
       threshold: 0.2,
     },
   },
-  snapshotDir: path.join(__dirname, 'tests', '__snapshots__'),
+  snapshotDir: path.resolve(__dirname, 'tests', '__snapshots__'),
+  snapshotSuffix: '-visual-linux',
   reporter: [['line', { isStrict: false }]],
   use: {
     baseURL: 'http://localhost:8080',
