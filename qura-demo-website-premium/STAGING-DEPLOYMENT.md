@@ -1,10 +1,12 @@
 # QURA Premium - Staging Deployment
 
 ## Staging URL
-https://staging.kortek.co.ke/qura-premium
+https://korteksolutions-12.github.io/kortek-website/qura-premium/
+
+**GitHub Pages Project Site** - Content deployed from `staging-qura-premium` branch to `/qura-premium/` path.
 
 ## Deployment Process
-1. Push to `staging-qura-premium` branch
+1. Push to `staging-qura-premium` branch (already done)
 2. GitHub Actions workflow triggers
 3. Verify deployment at staging URL
 4. QA verification with stakeholder
@@ -14,21 +16,30 @@ https://staging.kortek.co.ke/qura-premium
 - 13-page Premium website
 - Three.js 3D hero with interactive geometry
 - GSAP scroll-triggered animations
-- Contact form with backend API
+- Contact form (posts to /api/contact - endpoint not implemented)
 - Fully responsive design
 
+## SVG Placeholder Illustrations (to be replaced)
+- `assets/images/team-placeholder.svg` — team placeholder graphic
+- `assets/images/portfolio-placeholder.svg` — portfolio showcase placeholder  
+- `assets/images/services-placeholder.svg` — services icon placeholder
+
 ## QA Checklist (Staging)
-- [ ] 3D hero performs smoothly on desktop
-- [ ] 3D hero responsive on mobile
-- [ ] All GSAP animations trigger correctly
-- [ ] Contact form submits successfully
-- [ ] All internal links work
-- [ ] Images load correctly
-- [ ] SEO meta tags present
+- [✓] 3D hero performs smoothly on desktop (tested locally)
+- [✓] 3D hero responsive on mobile (tested locally)
+- [✓] All GSAP animations trigger correctly (tested locally)
+- [ ] Contact form submits - **OUTSTANDING**: /api/contact endpoint not implemented
+- [✓] All internal links work
+- [⚠] Images are placeholders (intentional - needs replacement)
+- [✓] SEO meta tags present
+
+## Outstanding Items
+1. **Form submission backend**: The contact form posts to `/api/contact` but no server endpoint exists. This needs implementation (Node.js/Express, PHP, or serverless function).
+2. **Placeholder imagery**: SVG placeholders need replacement with professional licensed photos.
 
 ## Production Migration
 After approval:
-1. Merge staging-qura-premium to main
+1. Merge staging-qura-premium to main (or create dedicated qura-premium branch)
 2. Deploy to quratech.co.ke
 3. Update DNS if needed
 4. Verify production deployment

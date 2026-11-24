@@ -42,8 +42,14 @@
         }
       },
       "deliveryEstimate": "7 days",
-      "updatedAt": "2026-11-24T18:16:08.708Z"
+      "deliveryEstimate": "7 days",
+      "stagingUrl": "https://korteksolutions-12.github.io/kortek-website/qura-premium/",
+      "deployMethod": "github-pages",
+      "deployBranch": "staging-qora-premium",
+      "deployCommit": "6a31dca",
+      "outstanding": ["form-backend", "placeholder-images"],
+      "updatedAt": "2026-11-24T23:25:00.000Z"
     }
   },
-  "lastUpdated": "2026-11-24T18:16:08.709Z"
+  "lastUpdated": "2026-11-24T19:59:06.439Z"
 }
