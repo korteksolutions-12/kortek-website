@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <meta name="description" content="{{metaDescription}}">
+    <meta property="og:title" content="{{ogTitle}}">
+    <meta property="og:description" content="{{ogDescription}}">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="css/style.css">
+    {{#if threeD}}
+    <script src="https://cdn.jsdelivr.net/npm/three@0.157.0/build/three.min.js"></script>
+    {{/if}}
+</head>
+<body>
+    <header class="header" role="banner">
+        <div class="container">
+            <a href="index.html" class="logo" aria-label="{{brandName}} - Home">{{brandName}}</a>
+            <nav class="nav" role="navigation" aria-label="Main navigation">
+                <ul class="nav__list" id="nav-list">
+                    {{#each navItems}}
+                    <li><a href="{{path}}" class="nav__link {{#if active}}nav__link--active{{/if}}">{{label}}</a></li>
+                    {{/each}}
+                </ul>
+                <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-list">☰</button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main" role="main">
+        {{#if hero.3D}}
+        <section class="hero hero--3d" aria-labelledby="hero-title">
+            <div class="container">
+                <h1 id="hero-title" class="hero__title">{{hero.title}}</h1>
+                {{#if hero.subtitle}}
+                <p class="hero__subtitle">{{hero.subtitle}}</p>
+                {{/if}}
+                <a href="{{hero.cta.href}}" class="btn btn--primary">{{hero.cta.text}}</a>
+                <div id="threejs-container" class="threejs-container" aria-hidden="true"></div>
+            </div>
+        </section>
+        {{#else}}
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="container">
+                <h1 id="hero-title" class="hero__title">{{hero.title}}</h1>
+                {{#if hero.subtitle}}
+                <p class="hero__subtitle">{{hero.subtitle}}</p>
+                {{/if}}
+                <a href="{{hero.cta.href}}" class="btn btn--primary">{{hero.cta.text}}</a>
+            </div>
+        </section>
+        {{/if}}
+
+        {{#each sections}}
+        <section class="section section--{{id}}" aria-labelledby="{{id}}-title">
+            <div class="container">
+                <h2 id="{{id}}-title" class="section__title">{{title}}</h2>
+                <div class="section__content">
+                    {{{content}}}
+                </div>
+            </div>
+        </section>
+        {{/each}}
+    </main>
+
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer__brand">
+                <h3 class="footer__title">{{brandName}}</h3>
+                <p class="footer__tagline">{{tagline}}</p>
+            </div>
+            <div class="footer__columns">
+                <div class="footer__column">
+                    <h4 class="footer__column-title">Quick Links</h4>
+                    <ul class="footer__list">
+                        {{#each quickLinks}}
+                        <li><a href="{{path}}" class="footer__link">{{label}}</a></li>
+                        {{/each}}
+                    </ul>
+                </div>
+                <div class="footer__column">
+                    <h4 class="footer__column-title">Connect</h4>
+                    <div class="social-links">
+                        {{#each socialLinks}}
+                        <a href="{{url}}" class="social-link" aria-label="{{label}}">{{icon}}</a>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <p>&copy; {{year}} {{brandName}}. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    {{#each scripts}}
+    <script src="{{.}}"></script>
+    {{/each}}
+</body>
+</html>

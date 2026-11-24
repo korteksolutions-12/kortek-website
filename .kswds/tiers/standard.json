@@ -1,0 +1,69 @@
+{
+  "name": "Standard",
+  "description": "Richer branding, additional sections and functionality",
+  "target": "Growing businesses, professional services, e-commerce-lite",
+  "pages": {
+    "min": 8,
+    "max": 12,
+    "typical": 10
+  },
+  "sections": [
+    "hero",
+    "value-proposition",
+    "services-detailed",
+    "portfolio",
+    "testimonials",
+    "blog-preview",
+    "faq",
+    "team",
+    "contact"
+  ],
+  "features": [
+    "responsive-navigation",
+    "mobile-friendly-menu",
+    "sticky-header-scrolling",
+    "footer-with-social-links",
+    "contact-form-with-validation",
+    "newsletter-signup",
+    "blog-section",
+    "portfolio/gallery",
+    "testimonials-slider",
+    "services-grid",
+    "faq-accordion",
+    "team-cards",
+    "seo-meta-tags",
+    "sitemap",
+    "robots-txt",
+    "favicon",
+    "structured-data-jsonld"
+  ],
+  "animations": {
+    "enabled": true,
+    "types": [
+      "css-transitions",
+      "fade-in",
+      "slide-in",
+      "staggered-appear"
+    ]
+  },
+  "threeD": {
+    "enabled": false,
+    "reason": "Only premium includes 3D elements"
+  },
+  "performance": {
+    "bundleSizeKB": 200,
+    "lighthouseScore": 90,
+    "loadTimeSeconds": 2.5
+  },
+  "delivery": {
+    "days": 4,
+    "revisionsIncluded": 2,
+    "deployment": "GitHub Actions CI/CD"
+  },
+  "exclusions": [
+    "no 3D graphics",
+    "no custom WebGL",
+    "no full-screen parallax",
+    "no advanced micro-interactions"
+  ]
+}

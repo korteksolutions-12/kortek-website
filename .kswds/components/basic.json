@@ -1,0 +1,34 @@
+{
+  "tier": "basic",
+  "components": {
+    "hero": {
+      "type": "static",
+      "fields": ["title", "subtitle", "cta"]
+    },
+    "about": {
+      "type": "content",
+      "fields": ["title", "paragraphs", "image"]
+    },
+    "services": {
+      "type": "grid",
+      "fields": ["title", "items"],
+      "itemFields": ["name", "description", "icon"]
+    },
+    "testimonials": {
+      "type": "slider",
+      "fields": ["title", "items"],
+      "itemFields": ["quote", "author", "role"]
+    },
+    "contact": {
+      "type": "form",
+      "fields": ["title", "fields"],
+      "formFields": ["name", "email", "message"]
+    },
+    "footer": {
+      "type": "standard",
+      "fields": ["brand", "links", "social"]
+    }
+  },
+  "animations": [],
+  "scripts": []
+}

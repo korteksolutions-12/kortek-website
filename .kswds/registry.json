@@ -1,0 +1,49 @@
+{
+  "projects": {
+    "qura-corporate-website-demo": {
+      "projectId": "qura-corporate-website-demo",
+      "projectName": "Qura Corporate Website",
+      "clientName": "Qura Tech Solutions",
+      "tier": "premium",
+      "repoUrl": "https://github.com/korteksolutions-12/qura-corporate-website",
+      "deployUrl": "https://quratech.co.ke",
+      "blueprintHash": "a1b2c3d4e5f6",
+      "technologyStack": [
+        "html",
+        "css",
+        "javascript",
+        "gsap"
+      ],
+      "features": [],
+      "pages": [],
+      "requirements": "Premium website for tech solutions company",
+      "status": "planning",
+      "createdAt": "2026-11-24T17:42:06.159Z",
+      "updatedAt": "2026-11-24T17:42:06.159Z",
+      "revisionHistory": []
+    },
+    "qura-corporate-website-1700870400000": {
+      "projectId": "qura-corporate-website-1700870400000",
+      "projectName": "Qura Corporate Website",
+      "tier": "premium",
+      "status": "qa-passed",
+      "qaResults": {
+        "total": 7,
+        "passed": 7,
+        "failed": 0,
+        "jobs": {
+          "lint": "pass",
+          "link-checking": "pass",
+          "image-checking": "pass",
+          "accessibility": "pass",
+          "responsive": "pass",
+          "visual": "pass",
+          "performance": "pass"
+        }
+      },
+      "deliveryEstimate": "7 days",
+      "updatedAt": "2026-11-24T18:16:08.708Z"
+    }
+  },
+  "lastUpdated": "2026-11-24T18:16:08.709Z"
+}

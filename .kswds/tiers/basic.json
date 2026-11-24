@@ -1,0 +1,59 @@
+{
+  "name": "Basic",
+  "description": "Professional, clean business websites",
+  "target": "Small businesses, startups, personal brands",
+  "pages": {
+    "min": 5,
+    "max": 7,
+    "typical": 6
+  },
+  "sections": [
+    "hero",
+    "about",
+    "services",
+    "testimonials",
+    "contact"
+  ],
+  "features": [
+    "responsive-navigation",
+    "mobile-friendly-menu",
+    "footer-with-links",
+    "contact-form",
+    "seo-meta-tags",
+    "sitemap",
+    "robots-txt",
+    "favicon"
+  ],
+  "design": {
+    "layout": "single-column on mobile, 2-3 columns on desktop",
+    "navigation": "sticky top bar with mobile hamburger",
+    "colors": "2 primary + 1 accent",
+    "typography": "2-3 font sizes, clear hierarchy",
+    "images": "professional stock photos only"
+  },
+  "animations": {
+    "enabled": false,
+    "reason": "Maintain performance on basic tier"
+  },
+  "threeD": {
+    "enabled": false,
+    "reason": "Not appropriate for basic business sites"
+  },
+  "performance": {
+    "bundleSizeKB": 100,
+    "lighthouseScore": 90,
+    "loadTimeSeconds": 2.0
+  },
+  "delivery": {
+    "days": 2,
+    "revisionsIncluded": 1,
+    "deployment": "GitHub Pages or Netlify"
+  },
+  "exclusions": [
+    "no custom illustrations",
+    "no animated elements",
+    "no 3D graphics",
+    "no parallax scrolling",
+    "no micro-interactions"
+  ]
+}

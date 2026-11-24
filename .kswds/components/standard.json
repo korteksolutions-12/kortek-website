@@ -1,0 +1,57 @@
+{
+  "tier": "standard",
+  "components": {
+    "hero": {
+      "type": "animated",
+      "fields": ["title", "subtitle", "cta", "background"],
+      "animations": ["fade-in", "slide-up"]
+    },
+    "value-proposition": {
+      "type": "icon-grid",
+      "fields": ["title", "items"],
+      "itemFields": ["icon", "title", "description"]
+    },
+    "services": {
+      "type": "detailed-grid",
+      "fields": ["title", "items"],
+      "itemFields": ["name", "description", "features", "icon", "cta"]
+    },
+    "portfolio": {
+      "type": "filterable-grid",
+      "fields": ["title", "categories", "items"],
+      "itemFields": ["title", "description", "image", "tags", "link"]
+    },
+    "testimonials": {
+      "type": "carousel",
+      "fields": ["title", "items", "autoplay"],
+      "itemFields": ["quote", "author", "role", "company", "avatar"],
+      "animations": ["slide", "fade"]
+    },
+    "blog-preview": {
+      "type": "card-grid",
+      "fields": ["title", "posts", "viewAllLink"],
+      "itemFields": ["title", "excerpt", "date", "category", "image", "link"]
+    },
+    "faq": {
+      "type": "accordion",
+      "fields": ["title", "items"],
+      "itemFields": ["question", "answer"]
+    },
+    "team": {
+      "type": "card-grid",
+      "fields": ["title", "members"],
+      "itemFields": ["name", "role", "bio", "image", "social"]
+    },
+    "contact": {
+      "type": "form-enhanced",
+      "fields": ["title", "fields", "validation"],
+      "formFields": ["name", "email", "company", "message", "recaptcha"]
+    },
+    "footer": {
+      "type": "enhanced",
+      "fields": ["brand", "links", "social", "newsletter"]
+    }
+  },
+  "animations": ["css-transitions", "fade-in", "slide-in", "staggered-appear"],
+  "scripts": ["animations.js", "carousel.js", "accordion.js"]
+}

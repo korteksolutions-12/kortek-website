@@ -1,0 +1,122 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "KSwds Project Registry",
+  "description": "Schema for Kortek Website Development system project registry",
+  "type": "object",
+  "required": ["projectId", "projectName", "clientName", "tier", "repoUrl", "deployUrl", "blueprintHash", "status"],
+  "properties": {
+    "projectId": {
+      "type": "string",
+      "description": "Unique project identifier",
+      "pattern": "^[a-z0-9]+-\\d+$"
+    },
+    "projectName": {
+      "type": "string",
+      "minLength": 1
+    },
+    "clientName": {
+      "type": "string",
+      "minLength": 1
+    },
+    "tier": {
+      "type": "string",
+      "enum": ["basic", "standard", "premium"]
+    },
+    "repoUrl": {
+      "type": "string",
+      "format": "uri"
+    },
+    "deployUrl": {
+      "type": "string",
+      "format": "uri"
+    },
+    "blueprintHash": {
+      "type": "string",
+      "description": "SHA256 hash of approved blueprint"
+    },
+    "technologyStack": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": ["html", "css", "javascript"]
+    },
+    "features": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "pages": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {"type": "string"},
+          "url": {"type": "string"},
+          "sections": {
+            "type": "array",
+            "items": {"type": "string"}
+          }
+        }
+      }
+    },
+    "media": {
+      "type": "object",
+      "properties": {
+        "images": {"type": "array", "items": {"type": "string"}},
+        "videos": {"type": "array", "items": {"type": "string"}},
+        "illustrations": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "requirements": {
+      "type": "string"
+    },
+    "approvals": {
+      "type": "object",
+      "properties": {
+        "blueprintApprovedAt": {"type": "string", "format": "date-time"},
+        "designApprovedAt": {"type": "string", "format": "date-time"},
+        "finalApprovedAt": {"type": "string", "format": "date-time"}
+      }
+    },
+    "revisionHistory": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "version": {"type": "string"},
+          "date": {"type": "string", "format": "date-time"},
+          "changes": {"type": "string"},
+          "qaStatus": {
+            "type": "object",
+            "properties": {
+              "lint": {"type": "string"},
+              "linkChecking": {"type": "string"},
+              "imageChecking": {"type": "string"},
+              "accessibility": {"type": "string"},
+              "responsive": {"type": "string"},
+              "visual": {"type": "string"},
+              "performance": {"type": "string"}
+            }
+          }
+        }
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": ["planning", "blueprint-approved", "in-progress", "qa-pending", "qa-passed", "review", "approved", "deployed", "on-hold", "cancelled"]
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updatedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "notes": {
+      "type": "string"
+    }
+  }
+}

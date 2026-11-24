@@ -1,0 +1,90 @@
+{
+  "name": "Premium",
+  "description": "Sophisticated layouts, advanced interactions, animations and 3D",
+  "target": "Established businesses, luxury brands, tech startups, creative agencies",
+  "pages": {
+    "min": 12,
+    "max": 20,
+    "typical": 15
+  },
+  "sections": [
+    "hero-3d",
+    "value-proposition-with-animations",
+    "services-detailed-with-icons",
+    "portfolio-with-filters",
+    "case-studies",
+    "blog-with-search",
+    "faq-with-accordion",
+    "team-with-hover-effects",
+    "testimonials-with-video",
+    "pricing-plans",
+    "contact-with-map",
+    "newsletter-with-modal"
+  ],
+  "features": [
+    "responsive-navigation",
+    "mobile-friendly-menu",
+    "sticky-header-scrolling",
+    "animated-sticky-header",
+    "footer-with-social-links",
+    "contact-form-with-validation-and-recaptcha",
+    "newsletter-signup-with-double-opt-in",
+    "blog-section-with-pagination",
+    "portfolio/gallery-with-lightbox",
+    "testimonials-slider-with-video",
+    "services-grid-with-hover",
+    "faq-accordion",
+    "team-cards-with-hover",
+    "pricing-comparison-table",
+    "interactive-map",
+    "search-functionality",
+    "seo-meta-tags",
+    "sitemap",
+    "robots-txt",
+    "favicon",
+    "structured-data-jsonld",
+    "web-vitals-monitoring",
+    "newsletter-modal",
+    "cookie-consent-banner"
+  ],
+  "animations": {
+    "enabled": true,
+    "library": "GSAP",
+    "types": [
+      "scroll-reveal",
+      "smooth-scroll",
+      "parallax-background",
+      "micro-interactions",
+      "hover-animations",
+      "loading-spinner",
+      "smooth-transition"
+    ]
+  },
+  "threeD": {
+    "enabled": true,
+    "techniques": [
+      "three-js-hero",
+      " WebGL-background",
+      "interactive-3d-models",
+      "parallax-scene"
+    ]
+  },
+  "performance": {
+    "bundleSizeKB": 500,
+    "lighthouseScore": 90,
+    "loadTimeSeconds": 3.0,
+    "criticalPath": "optimize-3d-loading"
+  },
+  "delivery": {
+    "days": 7,
+    "revisionsIncluded": 3,
+    "deployment": "Cloudflare Pages or Vercel with edge network"
+  },
+  "premiumGuarantees": [
+    "genuinely-looks-premium",
+    "advanced-interactions",
+    "animation-smooth-and-purposeful",
+    "3d-elements-well-integrated",
+    "no-placeholders-or-half-finished-work"
+  ]
+}

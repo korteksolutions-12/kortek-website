@@ -1,0 +1,69 @@
+projectName: "Qura Corporate Website"
+clientName: "Qura Tech Solutions"
+tier: "premium"
+date: "2026-11-24"
+version: "1.0"
+primaryGoal: "Establish Qura as a leading tech solutions provider with a modern, impressive online presence that generates B2B leads"
+successMetrics:
+  - "Increase qualified leads by 40% in 6 months"
+  - "Achieve 90+ Lighthouse score on all pages"
+  - "Reduce bounce rate to under 40%"
+primaryAudience: "Technical decision-makers at mid-large enterprises looking for software development partners"
+secondaryAudience: "Investors and enterprise clients evaluating technology partners"
+ageRange: "28-50"
+location: "East Africa, global tech markets"
+interests: "technology, innovation, digital transformation"
+brandName: "Qura Tech Solutions"
+tagline: "Innovating Tomorrow's Solutions"
+mission: "To empower businesses through cutting-edge technology solutions that drive growth and innovation"
+values:
+  - "Innovation"
+  - "Excellence"
+  - "Integrity"
+  - "Collaboration"
+primaryColor: "#0ea5e9"
+secondaryColor: "#1e293b"
+accentColor: "#f59e0b"
+headingFont: "Inter"
+bodyFont: "Inter"
+toneOfVoice: "Professional, innovative, confident"
+visualStyle: "Modern with bold typography, clean layouts, and subtle animations"
+reference1: "https://stripe.com"
+reference2: "https://notion.so"
+pages:
+  - name: "Home"
+    sections: ["hero-3d", "value-prop", "services-preview", "portfolio-featured", "testimonials", "cta"]
+  - name: "About"
+    sections: ["company-story", "mission-values", "team", "careers"]
+  - name: "Services"
+    sections: ["service-cards", "service-detail-modals", "process", "case-studies"]
+  - name: "Portfolio"
+    sections: ["portfolio-filters", "project-showcase", "testimonials"]
+  - name: "Blog"
+    sections: ["blog-list", "search", "categories"]
+  - name: "Contact"
+    sections: ["contact-form", "map", "office-info"]
+seoKeywords: "software development, digital transformation, enterprise solutions, cloud services, mobile apps"
+metaTitleFormat: "{Page Title} | {Brand Name} - {Location}"
+metaDescription: "Qura Tech Solutions builds innovative technology solutions for enterprises. Explore our services, portfolio, and how we can transform your business."
+images:
+  - "hero-3d-model.png"
+  - "team-headshots.zip"
+  - "portfolio-screenshots.zip"
+  - "office-photos.jpg"
+illustrations:
+  - "process-diagram.svg"
+  - "tech-stack-icons.svg"
+videos:
+  - "about-30sec.mp4"
+customFeatures:
+  - "three-js-hero"
+  - "gsap-animations"
+  - "dark-mode-toggle"
+  - "newsletter-modal"
+  - "lazy-loading-images"
+domain: "quratech.co.ke"
+successMetrics:
+  - "Increase qualified leads by 40%"
+  - "90+ Lighthouse score"
+  - "Bounce rate under 40%"

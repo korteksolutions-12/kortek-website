@@ -1,0 +1,112 @@
+{
+  "tier": "premium",
+  "components": {
+    "hero-3d": {
+      "type": "threejs",
+      "fields": ["title", "subtitle", "cta", "modelPath", "cameraConfig", "interaction"],
+      "threejs": {
+        "renderer": "webgl",
+        "antialias": true,
+        "alpha": true,
+        "camera": { "fov": 45, "near": 0.1, "far": 1000 },
+        "animation": "orbit-auto"
+      },
+      "animations": ["gsap-timeline", "scroll-trigger"]
+    },
+    "hero-animated": {
+      "type": "advanced",
+      "fields": ["title", "subtitle", "cta", "backgroundAnimation"],
+      "animations": ["parallax", "text-reveal", "particle-bg"]
+    },
+    "value-proposition": {
+      "type": "animated-grid",
+      "fields": ["title", "items"],
+      "itemFields": ["icon", "title", "description", "hoverEffect"],
+      "animations": ["staggered-reveal", "hover-lift"]
+    },
+    "services": {
+      "type": "modal-detail",
+      "fields": ["title", "items"],
+      "itemFields": ["name", "shortDesc", "fullDesc", "features", "process", "icon", "caseStudyLink"],
+      "animations": ["modal-slide", "content-reveal"]
+    },
+    "portfolio": {
+      "type": "masonry-lightbox",
+      "fields": ["title", "filters", "items"],
+      "itemFields": ["title", "description", "images", "tags", "techStack", "link", "video"],
+      "animations": ["masonry-layout", "lightbox-fade"]
+    },
+    "case-studies": {
+      "type": "detail-pages",
+      "fields": ["title", "studies"],
+      "itemFields": ["title", "client", "challenge", "solution", "results", "metrics", "testimonial", "gallery"]
+    },
+    "blog": {
+      "type": "full-blog",
+      "fields": ["title", "posts", "categories", "search", "pagination"],
+      "itemFields": ["title", "excerpt", "content", "date", "author", "category", "tags", "readTime", "image"]
+    },
+    "faq": {
+      "type": "animated-accordion",
+      "fields": ["title", "items"],
+      "itemFields": ["question", "answer"],
+      "animations": ["smooth-expand", "icon-rotate"]
+    },
+    "team": {
+      "type": "interactive-cards",
+      "fields": ["title", "members"],
+      "itemFields": ["name", "role", "bio", "image", "social", "hoverAnimation"],
+      "animations": ["card-flip", "info-reveal"]
+    },
+    "testimonials": {
+      "type": "video-carousel",
+      "fields": ["title", "items", "autoplay"],
+      "itemFields": ["quote", "author", "role", "company", "avatar", "videoUrl"],
+      "animations": ["smooth-slide", "video-preview"]
+    },
+    "pricing": {
+      "type": "comparison-table",
+      "fields": ["title", "plans", "features", "toggle"],
+      "itemFields": ["name", "price", "period", "features", "cta", "popular"]
+    },
+    "contact": {
+      "type": "multi-step",
+      "fields": ["title", "steps", "validation", "recaptcha", "honeypot"],
+      "formFields": ["name", "email", "company", "budget", "timeline", "message", "attachments"],
+      "animations": ["step-transition", "progress-indicator"]
+    },
+    "newsletter": {
+      "type": "modal",
+      "fields": ["title", "description", "fields", "doubleOptIn"],
+      "formFields": ["email", "preferences"],
+      "animations": ["modal-fade", "success-animation"]
+    },
+    "footer": {
+      "type": "comprehensive",
+      "fields": ["brand", "links", "social", "newsletter", "legal", "backToTop"]
+    }
+  },
+  "animations": [
+    "gsap-trigger",
+    "scroll-reveal",
+    "smooth-scroll",
+    "micro-interactions",
+    "parallax-background",
+    "hover-animations",
+    "loading-spinner",
+    "page-transition"
+  ],
+  "scripts": [
+    "gsap.min.js",
+    "scrollTrigger.min.js",
+    "three.min.js",
+    "animations.js",
+    "portfolio.js",
+    "forms.js",
+    "modals.js"
+  ],
+  "threejs": {
+    "version": "r157",
+    "modules": ["OrbitControls", "GLTFLoader", "EffectComposer"]
+  }
+}
