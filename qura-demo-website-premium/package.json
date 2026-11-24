@@ -4,7 +4,8 @@
   "description": "Qura Corporate Website - premium tier",
   "scripts": {
     "dev": "npx serve .",
-    "validate": "node validate.js"
+    "validate": "node validate.js",
+    "build": "echo 'No build required - static HTML/JS/CSS'"
   },
   "dependencies": {
     "three": "^0.157.0",
