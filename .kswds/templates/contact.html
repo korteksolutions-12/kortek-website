@@ -43,7 +43,12 @@
                 <div class="section__content">
                     <p class="contact-intro">Ready to discuss your project? Fill out the form below and we'll get back to you within 24 hours.</p>
                     
-                    {{heroSections}}
+                    <form class="contact-form" id="contactForm">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit" class="btn btn--primary">Send Message</button>
+      </form>
                     
                 </div>
             </div>
