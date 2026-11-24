@@ -146,7 +146,7 @@ p {
 
 .nav__link {
     text-decoration: none;
-    color: var(--gray-color);
+    color: #475569;
     font-weight: 500;
     transition: color 0.3s;
     position: relative;
@@ -227,7 +227,7 @@ p {
 
 .hero__subtitle {
     font-size: 1.5rem;
-    color: var(--gray-color);
+    color: #475569;
     margin-bottom: 30px;
 }
 
@@ -256,7 +256,7 @@ p {
 }
 
 .hero__image-text {
-    color: var(--gray-color);
+    color: #475569;
     font-size: 1.25rem;
 }
 
@@ -271,7 +271,7 @@ p {
 
 .section-subtitle {
     text-align: center;
-    color: var(--gray-color);
+    color: #475569;
     margin-bottom: 60px;
     font-size: 1.25rem;
 }
@@ -316,7 +316,7 @@ p {
 }
 
 .service-card__desc {
-    color: var(--gray-color);
+    color: #475569;
     font-size: 0.95rem;
 }
 
@@ -359,7 +359,7 @@ p {
 }
 
 .why-card__desc {
-    color: var(--gray-color);
+    color: #475569;
     font-size: 0.95rem;
 }
 
@@ -379,7 +379,6 @@ p {
 
 .cta__subtitle {
     font-size: 1.25rem;
-    opacity: 0.95;
     margin-bottom: 40px;
 }
 
@@ -402,7 +401,7 @@ p {
 }
 
 .footer__tagline {
-    color: #94a3b8;
+    color: #cbd5e1;
     font-size: 0.9rem;
     margin-top: 12px;
 }
@@ -430,7 +429,7 @@ p {
 }
 
 .footer__list a {
-    color: #cbd5e1;
+    color: #e2e8f0;
     text-decoration: none;
     transition: color 0.3s;
     display: block;
@@ -440,7 +439,7 @@ p {
 
 .footer__contact-info a,
 .footer__list a {
-    color: #cbd5e1;
+    color: #e2e8f0;
     text-decoration: none;
     transition: color 0.3s;
     display: block;
@@ -457,9 +456,9 @@ p {
     text-align: center;
     margin-top: 40px;
     padding-top: 20px;
-    border-top: 1px solid #1e293b;
+    border-top: 1px solid #334155;
     font-size: 0.85rem;
-    color: #64748b;
+    color: #94a3b8;
 }
 
 /* Page Header */
@@ -476,7 +475,7 @@ p {
 }
 
 .page-header .page-subtitle {
-    color: var(--gray-color);
+    color: #475569;
     font-size: 1.25rem;
 }
 
@@ -590,7 +589,7 @@ p {
 }
 
 .value-desc {
-    color: var(--gray-color);
+    color: #475569;
     font-size: 0.95rem;
 }
 
@@ -633,7 +632,7 @@ p {
 }
 
 .team-card__role {
-    color: var(--gray-color);
+    color: #475569;
     font-size: 0.9rem;
 }
 
@@ -655,7 +654,7 @@ p {
 }
 
 .service-category__subtitle {
-    color: var(--gray-color);
+    color: #475569;
     margin-bottom: 30px;
     font-size: 1.1rem;
 }
@@ -737,7 +736,7 @@ p {
 }
 
 .package-desc {
-    color: var(--gray-color);
+    color: #475569;
     margin-bottom: 20px;
 }
 
@@ -814,7 +813,7 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--gray-color);
+    color: #475569;
 }
 
 .project-card__content {
@@ -840,7 +839,7 @@ p {
 }
 
 .project-card__desc {
-    color: var(--gray-color);
+    color: #475569;
     font-size: 0.9rem;
     margin-bottom: 16px;
 }
@@ -857,12 +856,12 @@ p {
     padding: 4px 12px;
     border-radius: 20px;
     font-size: 0.8rem;
-    color: var(--gray-color);
+    color: #475569;
 }
 
 .project-card__meta {
     font-size: 0.85rem;
-    color: var(--gray-color);
+    color: #475569;
 }
 
 .projects-empty {
@@ -889,7 +888,7 @@ p {
 }
 
 .contact__intro {
-    color: var(--gray-color);
+    color: #475569;
     margin-bottom: 30px;
 }
 
@@ -956,7 +955,7 @@ p {
 .form-note {
     text-align: center;
     margin-top: 20px;
-    color: var(--gray-color);
+    color: #475569;
     font-size: 0.95rem;
 }
 
