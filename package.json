@@ -14,6 +14,7 @@
     "test:images": "node scripts/check-images.js",
     "test:responsive": "playwright test tests/responsive.spec.js",
     "test:visual": "playwright test tests/visual.spec.js",
+    "test:visual:update": "playwright test tests/visual.spec.js --update-snapshots",
     "test": "npm-run-all --parallel lint:*",
     "test:all": "npm-run-all lint:css lint:js lint:html validate:html test:links test:images test:a11y",
     "check": "npm-run-all lint:* test:* --parallel=false",

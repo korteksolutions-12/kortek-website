@@ -20,7 +20,7 @@ for (const viewport of viewports) {
   for (const page of pages) {
     test(`Responsive: ${page.name} @ ${viewport.name}`, async ({ page: browserPage }) => {
       await browserPage.setViewportSize({ width: viewport.width, height: viewport.height });
-      await browserPage.goto(`http://localhost:3000${page.path}`);
+      await browserPage.goto(`http://localhost:8080${page.path}`);
       await browserPage.waitForLoadState('networkidle');
 
       // Check for horizontal overflow

@@ -9,15 +9,17 @@ const pages = [
   { path: '/contact.html', name: 'Contact' }
 ];
 
-for (const page of pages) {
-  test(`Accessibility check: ${page.name}`, async ({ page: browserPage }) => {
-    await browserPage.goto(`http://localhost:3000${page.path}`);
-    await browserPage.waitForLoadState('networkidle');
+test.describe('Accessibility tests', () => {
+  for (const page of pages) {
+    test(`Accessibility check: ${page.name}`, async ({ page: browserPage }) => {
+      await browserPage.goto(`http://localhost:8080${page.path}`);
+      await browserPage.waitForLoadState('networkidle');
 
-    const accessibilityScanResults = await new AxeBuilder({ page: browserPage })
-      .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'])
-      .analyze();
+      const accessibilityScanResults = await new AxeBuilder({ page: browserPage })
+        .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'])
+        .analyze();
 
-    expect(accessibilityScanResults.violations).toEqual([]);
-  });
-}
+      expect(accessibilityScanResults.violations).toEqual([]);
+    });
+  }
+});
