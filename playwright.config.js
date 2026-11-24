@@ -15,5 +15,4 @@ module.exports = defineConfig({
     trace: 'on-first-retry',
     screenshot: 'only-on-failure',
   },
-  fullyParallel: false,
 });
