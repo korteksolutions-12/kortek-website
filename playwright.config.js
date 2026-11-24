@@ -1,9 +1,9 @@
 const { defineConfig } = require('@playwright/test');
+const path = require('path');
 
 module.exports = defineConfig({
   testDir: './tests',
   testMatch: '**/*.spec.js',
-  snapshotDir: require('path').join(__dirname, 'tests', 'visual.spec.js-snapshots'),
   timeout: 60000,
   expect: {
     toMatchSnapshot: {
@@ -20,6 +20,9 @@ module.exports = defineConfig({
     {
       name: 'visual',
       testMatch: /visual\.spec\.js/,
+      use: {
+        snapshotDir: path.join(__dirname, '..', 'tests', 'visual.spec.js-snapshots'),
+      },
     },
     {
       name: 'a11y',
