@@ -1,4 +1,5 @@
 const { defineConfig } = require('@playwright/test');
+const path = require('path');
 
 module.exports = defineConfig({
   testDir: './tests',
@@ -9,6 +10,7 @@ module.exports = defineConfig({
       threshold: 0.2,
     },
   },
+  snapshotDir: path.join(__dirname, 'tests', '__snapshots__'),
   reporter: [['line', { isStrict: false }]],
   use: {
     baseURL: 'http://localhost:8080',
