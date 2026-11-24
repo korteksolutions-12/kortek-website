@@ -15,18 +15,5 @@ module.exports = defineConfig({
     trace: 'on-first-retry',
     screenshot: 'only-on-failure',
   },
-  projects: [
-    {
-      name: 'visual',
-      testMatch: /visual\.spec\.js/,
-    },
-    {
-      name: 'a11y',
-      testMatch: /a11y\.spec\.js/,
-    },
-    {
-      name: 'responsive',
-      testMatch: /responsive\.spec\.js/,
-    },
-  ],
+  fullyParallel: false,
 });
