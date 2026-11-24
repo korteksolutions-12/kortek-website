@@ -1,9 +1,4 @@
 const { defineConfig } = require('@playwright/test');
-const path = require('path');
-const fs = require('fs');
-
-// Resolve snapshot directory relative to package.json location
-const snapshotDir = path.resolve(__dirname, 'tests', 'visual.spec.js-snapshots');
 
 module.exports = defineConfig({
   testDir: './tests',
@@ -24,9 +19,6 @@ module.exports = defineConfig({
     {
       name: 'visual',
       testMatch: /visual\.spec\.js/,
-      use: {
-        snapshotDir,
-      },
     },
     {
       name: 'a11y',
