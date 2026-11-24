@@ -1,0 +1,13 @@
+{
+  "name": "qura-corporate-website-1700870400000",
+  "version": "1.0.0",
+  "description": "Qura Corporate Website - premium tier",
+  "scripts": {
+    "dev": "npx serve .",
+    "validate": "node validate.js"
+  },
+  "dependencies": {
+    "three": "^0.157.0",
+    "gsap": "^3.12.0"
+  }
+}

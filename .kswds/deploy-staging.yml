@@ -1,0 +1,39 @@
+name: Deploy-Qura-Premium-Staging
+
+on:
+  push:
+    branches: [ staging-qura-premium ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: staging
+      url: https://staging.kortek.co.ke/qura-premium
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+
+    - name: Install dependencies
+      working-directory: qura-demo-website-premium
+      run: npm ci
+
+    - name: Build assets
+      working-directory: qura-demo-website-premium
+      run: npm run build
+
+    - name: Run QA Checks
+      working-directory: qura-demo-website-premium
+      run: npm run validate
+
+    - name: Deploy to staging
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./qura-demo-website-premium
+        destination_dir: qura-premium

@@ -1,0 +1,66 @@
+{
+  "projectId": "qura-corporate-website-1700870400000",
+  "projectName": "Qura Corporate Website",
+  "clientName": "Qura Tech Solutions",
+  "tier": "premium",
+  "tierConfig": {
+    "pages": { "min": 12, "max": 20, "typical": 15 },
+    "features": ["contact-form", "navigation", "footer", "seo-meta", "blog", "portfolio", "testimonials", "services-grid", "faq-accordion", "team", "pricing", "3d-hero", "newsletter"],
+    "animations": ["gsap-trigger", "scroll-reveal", "smooth-scroll", "micro-interactions", "parallax"],
+    "threeD": true,
+    "deliveryDays": 7
+  },
+  "version": "1.0.0",
+  "createdAt": "2026-11-24T16:00:00.000Z",
+  "businessObjectives": {
+    "primaryGoal": "Establish Qura as a leading tech solutions provider with a modern, impressive online presence that generates B2B leads",
+    "successMetrics": ["Increase qualified leads by 40% in 6 months", "Achieve 90+ Lighthouse score on all pages", "Reduce bounce rate to under 40%"],
+    "targetAudience": {
+      "primary": "Technical decision-makers at mid-large enterprises looking for software development partners",
+      "secondary": "Investors and enterprise clients evaluating technology partners"
+    }
+  },
+  "brandIdentity": {
+    "name": "Qura Tech Solutions",
+    "tagline": "Innovating Tomorrow's Solutions",
+    "values": ["Innovation", "Excellence", "Integrity", "Collaboration"],
+    "colors": { "primary": "#0ea5e9", "secondary": "#1e293b", "accent": "#f59e0b" },
+    "typography": { "heading": "Inter", "body": "Inter" },
+    "toneOfVoice": "Professional, innovative, confident"
+  },
+  "design": {
+    "style": "Modern with bold typography, clean layouts, and subtle animations",
+    "references": ["https://stripe.com", "https://notion.so"]
+  },
+  "sitemap": [
+    { "name": "Home", "path": "home", "sections": ["hero-3d", "value-prop", "services-preview", "portfolio-featured", "testimonials", "cta"], "order": 1 },
+    { "name": "About", "path": "about", "sections": ["company-story", "mission-values", "team", "careers"], "order": 2 },
+    { "name": "Services", "path": "services", "sections": ["service-cards", "service-detail-modals", "process", "case-studies"], "order": 3 },
+    { "name": "Portfolio", "path": "portfolio", "sections": ["portfolio-filters", "project-showcase", "testimonials"], "order": 4 },
+    { "name": "Case Studies", "path": "case-studies", "sections": ["case-study-grid", "detailed-view"], "order": 5 },
+    { "name": "Blog", "path": "blog", "sections": ["blog-list", "search", "categories", "newsletter"], "order": 6 },
+    { "name": "Blog Post", "path": "blog/post", "sections": ["article", "related-posts"], "order": 7 },
+    { "name": "Team", "path": "team", "sections": ["team-grid", "leadership", "culture"], "order": 8 },
+    { "name": "Pricing", "path": "pricing", "sections": ["pricing-plans", "faq", "contact-cta"], "order": 9 },
+    { "name": "Careers", "path": "careers", "sections": ["open-positions", "benefits", "apply-form"], "order": 10 },
+    { "name": "Contact", "path": "contact", "sections": ["contact-form", "map", "office-info"], "order": 11 },
+    { "name": "Privacy Policy", "path": "privacy", "sections": ["policy-content"], "order": 12 },
+    { "name": "Terms of Service", "path": "terms", "sections": ["terms-content"], "order": 13 }
+  ],
+  "media": {
+    "images": ["hero-3d-model.png", "team-headshots.zip", "portfolio-screenshots.zip", "office-photos.jpg"],
+    "illustrations": ["process-diagram.svg", "tech-stack-icons.svg"],
+    "videos": ["about-30sec.mp4"]
+  },
+  "features": ["contact-form", "navigation", "footer", "seo-meta", "blog", "portfolio", "testimonials", "services-grid", "faq-accordion", "team", "pricing", "3d-hero", "newsletter", "three-js-hero", "gsap-animations", "dark-mode-toggle", "newsletter-modal", "lazy-loading-images"],
+  "animations": { "enabled": true, "types": ["gsap-trigger", "scroll-reveal", "smooth-scroll", "micro-interactions", "parallax"] },
+  "threeD": true,
+  "seo": {
+    "keywords": ["software development", "digital transformation", "enterprise solutions", "cloud services", "mobile apps"],
+    "titleFormat": "{Page Title} | {Brand Name} - {Location}",
+    "description": "Qura Tech Solutions builds innovative technology solutions for enterprises. Explore our services, portfolio, and how we can transform your business."
+  },
+  "hosting": { "domain": "quratech.co.ke", "ssl": true },
+  "estimatedDeliveryDays": 7,
+  "checksum": "a1b2c3d4e5f6..."
+}
