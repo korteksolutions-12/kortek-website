@@ -21,7 +21,7 @@ module.exports = defineConfig({
       name: 'visual',
       testMatch: /visual\.spec\.js/,
       use: {
-        snapshotDir: path.join(__dirname, '..', 'tests', 'visual.spec.js-snapshots'),
+        snapshotDir: path.join(__dirname, 'visual.spec.js-snapshots'),
       },
     },
     {
