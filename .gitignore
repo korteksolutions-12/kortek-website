@@ -1,0 +1,12 @@
+# Dependencies
+node_modules/
+
+# Test results
+test-results/
+
+# Playwright trace files
+*.trace
+
+# OS files
+.DS_Store
+Thumbs.db
