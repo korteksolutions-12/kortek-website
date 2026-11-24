@@ -18,8 +18,8 @@
     "test": "npm-run-all --parallel lint:*",
     "test:all": "npm-run-all lint:css lint:js lint:html validate:html test:links test:images test:a11y",
     "check": "npm-run-all lint:* test:* --parallel=false",
-    "start": "npx serve . -l 3000",
-    "dev": "npm run start & npx lhci autorun --collect.url=http://localhost:3000"
+    "start": "npx serve . -l 8080",
+    "dev": "npm run start & npx lhci autorun --collect.url=http://localhost:8080"
   },
   "repository": {
     "type": "git",
