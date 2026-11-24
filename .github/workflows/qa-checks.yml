@@ -162,11 +162,17 @@ jobs:
   performance:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '22'
           cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
 
       - name: Start preview server
         run: npm run start &
@@ -182,7 +188,7 @@ jobs:
           exit 1
 
       - name: Run Lighthouse CI
-        run: npx lhci autorun --collect.url=http://localhost:8080 --assert.preset=lighthouse:recommended
+        run: npx lhci autorun
 
   deploy:
     needs: [lint, link-checking, image-checking]
