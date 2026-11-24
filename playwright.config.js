@@ -11,6 +11,7 @@ module.exports = defineConfig({
     },
   },
   snapshotDir: path.resolve(__dirname, 'tests', 'visual.spec.js-snapshots'),
+  snapshotSuffix: '-visual-linux',
   reporter: [['line', { isStrict: false }]],
   use: {
     baseURL: 'http://localhost:8080',
