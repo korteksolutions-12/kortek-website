@@ -1,0 +1,36 @@
+name: Deploy-Qura-Premium-GitHub-Pages
+
+on:
+  push:
+    branches: [ staging-qura-premium ]
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+
+    - name: Install dependencies
+      working-directory: qura-demo-website-premium
+      run: npm ci
+
+    - name: Run QA Checks
+      working-directory: qura-demo-website-premium
+      run: npm run validate
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./qura-demo-website-premium

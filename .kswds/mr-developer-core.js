@@ -116,8 +116,9 @@ class MrDeveloper {
     const isContactPage = page.path === 'contact' || page.sections?.includes('contact-form');
     const heroType = isContactPage ? 'simple' : (is3DHero ? '3d' : 'default');
     
-    // Compute scriptTags for Premium tier
-    const scriptTags = isPremium
+    // Compute scriptTags for Premium tier (only on 3D hero pages)
+    const is3DPage = is3DHero && isPremium;
+    const scriptTags = is3DPage
       ? '<script src="js/three-hero.js"></script>\n<script src="js/gsap-animations.js"></script>\n<script src="js/form-handler.js"></script>'
       : '';
     
@@ -137,6 +138,7 @@ class MrDeveloper {
       threeDScript: threeDScript,
       threeD: is3DHero && isPremium,
       threeDVisible: is3DHero && isPremium ? 'false' : 'true',
+      is3DPage: is3DPage,
       hasSubtitle: true,
       heroType: heroType,
       heroSections: this._buildSections(page),
@@ -150,7 +152,7 @@ class MrDeveloper {
         { label: 'LinkedIn', url: '#', icon: '🔗' },
         { label: 'Twitter', url: '#', icon: '🐦' }
       ],
-      scripts: isPremium ? ['js/three-hero.js', 'js/gsap-animations.js', 'js/form-handler.js'] : [],
+      scripts: is3DPage ? ['js/three-hero.js', 'js/gsap-animations.js', 'js/form-handler.js'] : [],
       scriptTags: scriptTags,
       isContactPage: (page.path === 'contact' || page.sections?.includes('contact-form'))
     };
@@ -161,21 +163,26 @@ class MrDeveloper {
     
     // For contact page, return the contact form directly
     if (isContactPage) {
-      return this._buildSectionContent('contact');
+      return this._buildSection('contact-form');
     }
     
-    const sectionTypes = ['value-prop', 'services', 'portfolio', 'testimonials', 'contact'];
+    const sectionTypes = ['value-prop', 'services', 'portfolio', 'testimonials'];
     let html = '';
 
-    for (let i = 0; i < sectionTypes.length; i++) {
-      const type = sectionTypes[i];
-      if (page.sections && page.sections[i + 1]) {
-        html += this._buildSection(type);
+    for (const section of page.sections || []) {
+      // Map blueprint sections to available content
+      if (section === 'hero-3d' || section === 'hero') {
+        // 3D hero is handled in template
+        continue;
+      }
+      if (sectionTypes.includes(section) || ['services', 'portfolio', 'testimonials', 'about', 'blog', 'team', 'pricing', 'careers', 'case-studies', 'blog-post', 'company-story', 'mission-values', 'leadership', 'culture', 'process', 'faq', 'newsletter'].includes(section)) {
+        html += this._buildSection(section);
       }
     }
 
-    // Add Three.js scene for Premium
-    if (this.blueprint.tier === 'premium' && this.tierComponents?.animations) {
+    // Add Three.js scene only for 3D hero pages (Premium)
+    const is3DHeroPage = page.sections?.[0] === 'hero-3d' || page.sections?.includes('hero-3d');
+    if (is3DHeroPage && this.blueprint.tier === 'premium') {
       html += this._buildThreeDScene();
     }
 
@@ -280,12 +287,66 @@ class MrDeveloper {
           <footer>— Michael Chen, Creative Director at DesignStudio</footer>
         </blockquote>
       </div>`,
-      'contact': `<form class="contact-form" id="contactForm">
+      'contact-form': `<form class="contact-form" id="contactForm">
         <input type="text" name="name" placeholder="Your Name" required>
         <input type="email" name="email" placeholder="Your Email" required>
         <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
         <button type="submit" class="btn btn--primary">Send Message</button>
-      </form>`
+      </form>`,
+      'company-story': `<div class="features-grid">
+        <div class="feature">
+          <h3>Our Journey</h3>
+          <p>Founded in 2018, we've grown from a small startup to a team of 50+ experts serving enterprise clients worldwide.</p>
+        </div>
+        <div class="feature">
+          <h3>Our Mission</h3>
+          <p>Empowering businesses through innovative technology solutions that create measurable value.</p>
+        </div>
+      </div>`,
+      'mission-values': `<div class="features-grid">
+        <div class="feature">
+          <h3>Mission</h3>
+          <p>To build technology that solves real-world problems and creates opportunity for all.</p>
+        </div>
+        <div class="feature">
+          <h3>Values</h3>
+          <p>Innovation, Integrity, Excellence, and Partnership guide everything we do.</p>
+        </div>
+      </div>`,
+      'team': `<div class="team-grid">
+        <div class="team-member">
+          <h4>Jane Smith</h4>
+          <p class="role">CEO & Founder</p>
+          <p>Leading with vision and 15+ years of tech leadership experience.</p>
+        </div>
+        <div class="team-member">
+          <h4>John Doe</h4>
+          <p class="role">CTO</p>
+          <p>Driving technical innovation and product architecture.</p>
+        </div>
+      </div>`,
+      'pricing': `<div class="pricing-grid">
+        <div class="pricing-card">
+          <h4>Starter</h4>
+          <p class="price">$999</p>
+          <ul>
+            <li>Basic website</li>
+            <li>Up to 5 pages</li>
+            <li>3 months support</li>
+          </ul>
+        </div>
+        </div>`,
+      'faq': `<div class="faq-list">
+        <div class="faq-item">
+          <h4>What's your typical delivery timeline?</h4>
+          <p>Most projects complete in 4-6 weeks depending on scope.</p>
+        </div>
+      </div>`,
+      'blog-post': `<article class="blog-post">
+        <h2>Latest Blog Post</h2>
+        <p>Read our latest insights on technology and business transformation.</p>
+        <p>Discover how innovative technology solutions can transform your business operations, improve efficiency, and create competitive advantages in today's digital landscape.</p>
+      </article>`
     };
     return contentMap[type] || '<p>Content section</p>';
   }

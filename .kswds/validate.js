@@ -102,8 +102,8 @@ function validateLinks(dir) {
       const link = match[1];
       const targetPath = path.join(dir, link);
       if (!fs.existsSync(targetPath)) {
-        // Allow external links and anchors
-        if (!link.startsWith('http') && !link.startsWith('#') && !link.includes('://')) {
+        // Allow external links, anchors, mailto:, tel:, etc.
+        if (!link.startsWith('http') && !link.startsWith('#') && !link.includes('://') && !link.startsWith('mailto:') && !link.startsWith('tel:')) {
           console.log(`❌ Broken link in ${page}: ${link}`);
           return 'fail';
         }

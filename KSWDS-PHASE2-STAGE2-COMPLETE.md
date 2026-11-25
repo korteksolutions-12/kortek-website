@@ -133,7 +133,7 @@ qura-demo-website/
 
 | Debt | Status | Resolution |
 |------|--------|------------|
-| DEBT-001: Visual snapshots in CI | Preserved for Phase 2 | Will verify during MR DEVELOPER delivery |
+| DEBT-001: Visual snapshots in CI | Preserved for Stage 3 | Will verify during MR DEVELOPER delivery |
 | DEBT-002: 320px responsive failure | Addressed in CSS | Media queries now include 480px break-point |
 
 ---
@@ -141,10 +141,10 @@ qura-demo-website/
 ## NEXT MILESTONE: STAGE 3 - DEMONSTRATION PROJECT
 
 **Goals:**
-1. End-to-end client workflow simulation
-2. Staging deployment preparation
-3. Client delivery package
-4. PR #1 merge (pending Founder decision)
+1. End-to-End Client Workflow Simulation
+2. Staging Deployment Preparation
+3. Three.js 3D Hero Implementation
+4. Final QA with Real Content
 
 **Timeline:** 2-3 days
 
